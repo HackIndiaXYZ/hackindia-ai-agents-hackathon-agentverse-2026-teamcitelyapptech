@@ -6,15 +6,19 @@
 
 <p>Ask a question, follow its citation, and keep the thinking that matters.</p>
 
-<a href="https://citelyapp.tech/"><img src="docs/readme/cta-explore.svg" alt="Explore Citely → https://citelyapp.tech/" height="52"></a>
+<a href="https://hack.citelyapp.tech/"><img src="docs/readme/cta-explore.svg" alt="Try Citely → https://hack.citelyapp.tech/" height="52"></a>
 
-<p><sub>Public preview with prepared sample files · Product access by request</sub></p>
+<p><sub>Hackathon environment · create an account and try it with your own files</sub></p>
+
+<p><sub>Built for HackIndia AI Agents Hackathon (AgentVerse 2026) by TeamCitelyapp.Tech · [hackindia-team:hackindia-ai-agents-hackathon-agentverse-2026:teamcitelyapptech]</sub></p>
 
 <img src="docs/readme/badges/nextjs-15.svg" alt="Next.js 15" height="28"> <img src="docs/readme/badges/react-19.svg" alt="React 19" height="28"> <img src="docs/readme/badges/typescript.svg" alt="TypeScript" height="28"> <img src="docs/readme/badges/fastapi.svg" alt="FastAPI" height="28"> <img src="docs/readme/badges/python.svg" alt="Python" height="28"><br>
 <img src="docs/readme/badges/qdrant.svg" alt="Qdrant" height="28"> <img src="docs/readme/badges/bm25.svg" alt="BM25" height="28"> <img src="docs/readme/badges/bge-m3.svg" alt="bge-m3" height="28"> <img src="docs/readme/badges/rrf-and-flashrank.svg" alt="RRF + FlashRank" height="28"> <img src="docs/readme/badges/azure-openai.svg" alt="Azure OpenAI" height="28"><br>
 <img src="docs/readme/badges/azure-container-apps.svg" alt="Azure Container Apps" height="28"> <img src="docs/readme/badges/github-pages.svg" alt="GitHub Pages" height="28"> <img src="docs/readme/badges/sqlite.svg" alt="SQLite" height="28">
 
 <p><a href="#the-experience">Experience</a> · <a href="#the-product-as-a-skeleton">Skeleton</a> · <a href="#the-pipeline">Pipeline</a> · <a href="#behind-the-product">Posters</a> · <a href="#engineering-map">Engineering</a> · <a href="#local-development">Development</a></p>
+
+<p><a href="https://hack.citelyapp.tech/">Website</a> · <a href="https://www.instagram.com/citelyapp.tech/">Instagram</a> · <a href="https://x.com/Citelyapp26">X</a> · <a href="mailto:hello@citelyapp.tech">hello@citelyapp.tech</a></p>
 
 </div>
 
@@ -26,7 +30,7 @@ Citely brings a document library, conversation, source reader, citations, highli
 
 <img src="docs/readme/citely-film-evidence.gif" alt="Product film excerpt: a question is typed, the answer arrives with a citation, and the citation opens the original page with the exact passage highlighted." width="100%">
 
-<a href="https://citelyapp.tech/">
+<a href="https://hack.citelyapp.tech/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="Citely-Modernist-Next-Final/public/screenshots/workspace-dark.jpg">
     <img src="Citely-Modernist-Next-Final/public/screenshots/workspace-light.jpg" alt="Citely workspace product screenshot showing conversation and document reader" width="100%">
@@ -44,7 +48,7 @@ Citely brings a document library, conversation, source reader, citations, highli
 
 **Public demo.** A guided, interactive sample workspace uses prepared files and responses. Visitors can explore the flow without uploading personal documents or making model/API calls for demo answers. Its entry notice explains the synthetic data, and “Back to Citely” returns to the public site in the same tab.
 
-**Approved account.** The real product connects authenticated users to document processing, retrieval, generation, and persistence. Access is requested through the public site; existing approved users retain their separate sign-in flow.
+**Approved account.** The real product connects authenticated users to document processing, retrieval, generation, and persistence. Access is requested through the public site; existing approved users retain their separate sign-in flow. On the hackathon site (https://hack.citelyapp.tech) sign-up is open: create an account and it is approved at once.
 
 ### Precision is part of the interface
 
@@ -272,7 +276,7 @@ Citely-Modernist-Next-Final/  Authoritative product frontend
 prompts/                  Generation prompts and data boundaries
 tests/                    Backend tests
 eval/                     Evaluation harness
-docs/                     Architecture, implementation, and release evidence
+docs/readme/              README artwork (animations, badges, posters)
 docker/                   Container configuration
 .github/workflows/        CI and deployment workflows
 ```
@@ -297,7 +301,7 @@ npm ci
 BASE_PATH='' NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000 npm run dev
 ```
 
-Configure the backend using [`.env.example`](.env.example) and the [deployment guide](docs/deployment.md). Authentication requires a JWT secret; real parsing and generation require the relevant configured providers. See [`docker-compose.yml`](docker-compose.yml) for the container services and environment mapping.
+Configure the backend using [`.env.example`](.env.example). Authentication requires a JWT secret; real parsing and generation require the relevant configured providers. See [`docker-compose.yml`](docker-compose.yml) for the container services and environment mapping.
 
 <details>
 <summary><b>Checks</b> — frontend and backend</summary>
@@ -315,7 +319,6 @@ python -m unittest discover -s tests -v
 
 </details>
 
-For deeper implementation context: [precise citations](docs/CITELY-PRECISE-CITATIONS.md), [answer validation](docs/CITELY-ANSWER-VALIDATION.md), [viewer evaluation](docs/viewer-evaluation.md), and [project history](PROJECT_DOCUMENTATION.txt). Historical documents describe their own point in time; current code and deployment settings determine current behavior.
 
 ---
 
@@ -325,7 +328,9 @@ For deeper implementation context: [precise citations](docs/CITELY-PRECISE-CITAT
 
 Grounded answers, cited.
 
-<a href="https://citelyapp.tech/"><img src="docs/readme/cta-explore.svg" alt="Visit the public product → https://citelyapp.tech/" height="52"></a>
+<a href="https://hack.citelyapp.tech/"><img src="docs/readme/cta-explore.svg" alt="Try Citely → https://hack.citelyapp.tech/" height="52"></a>
+
+<p><a href="https://hack.citelyapp.tech/">Website</a> · <a href="https://www.instagram.com/citelyapp.tech/">Instagram</a> · <a href="https://x.com/Citelyapp26">X</a> · <a href="mailto:hello@citelyapp.tech">hello@citelyapp.tech</a></p>
 
 <sub>© 2026 Citely. Product artwork and screenshots are included for this project’s documentation.</sub>
 

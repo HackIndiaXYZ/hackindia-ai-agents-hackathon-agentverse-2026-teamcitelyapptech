@@ -422,7 +422,7 @@ test('the header shows an account initial, not the whole address; its menu signs
   await expect(page.getByRole('heading', {name: 'Overview'})).toBeVisible();
   await expect(page.locator('.adm-top')).not.toContainText(ADMIN);
   const avatar = page.getByRole('button', {name: 'Account for This site'});
-  await expect(avatar).toHaveText('C');
+  await expect(avatar).toHaveText('A');
   await avatar.click();
   const menu = page.getByRole('menu');
   await expect(menu).toContainText('SIGNED IN TO THIS SITE');
