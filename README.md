@@ -330,7 +330,7 @@ Grounded answers, cited.
 
 <a href="https://hack.citelyapp.tech/"><img src="docs/readme/cta-explore.svg" alt="Try Citely → https://hack.citelyapp.tech/" height="52"></a>
 
-<p><a href="https://hack.citelyapp.tech/">Website</a> · <a href="https://www.instagram.com/citelyapp.tech/">Instagram</a> · <a href="https://x.com/Citelyapp26">X</a> · <a href="mailto:hello@citelyapp.tech">hello@citelyapp.tech</a></p>
+<p><a href="https://hack.citelyapp.tech/">Website</a> · <a href="https://www.instagram.com/citelyapp.tech/">Instagram</a> · <a href="https://x.com/Citelyapp26">X</a> · <a href="mailto:citelyapp.tech@gmail.com">citelyapp.tech@gmail.com</a></p>
 
 <sub>© 2026 Citely. Product artwork and screenshots are included for this project’s documentation.</sub>
 
