@@ -1,0 +1,18 @@
+/* Source Point geometry, colours and lettering stay in the approved SVGs. */
+.source-point{display:inline-flex;vertical-align:middle;width:148px;max-width:100%;flex-shrink:0;line-height:0;letter-spacing:normal}
+.source-point img{display:block;width:100%;height:auto;max-width:100%}
+.source-point .source-point-dark{display:none}
+html[data-theme=dark] .source-point .source-point-light,body[data-mode=dark] .source-point .source-point-light{display:none}
+html[data-theme=dark] .source-point .source-point-dark,body[data-mode=dark] .source-point .source-point-dark{display:block}
+/* The editorial panel is red in both themes: always use the white wordmark. */
+html .auth-editorial .source-point .source-point-light{display:none}
+html .auth-editorial .source-point .source-point-dark{display:block}
+.source-point-icon{display:inline-block;width:20px;height:20px;vertical-align:middle;flex-shrink:0}
+.mini-brand{display:inline-flex;align-items:center}
+.mini-brand .source-point{width:82px;display:inline-flex}
+.answer-author{display:flex;align-items:center;gap:6px}
+.boot .source-point{width:180px}
+.desk-header .source-point{width:116px}
+@media(max-width:600px){.wordmark .source-point{width:118px}.desk-header .source-point{width:85px}.mini-brand .source-point{width:70px}}
+
+@media(max-width:360px){.marketing-header .wordmark .source-point{width:88px}}

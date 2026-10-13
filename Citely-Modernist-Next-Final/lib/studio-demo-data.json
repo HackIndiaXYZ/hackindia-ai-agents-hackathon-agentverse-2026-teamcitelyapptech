@@ -1,0 +1,295 @@
+[
+  {
+    "id": "annual",
+    "filename": "Annual report 2025.docx",
+    "pages": [
+      {
+        "page": 1,
+        "text": "ACME / RESEARCH & STRATEGY\n\nA year of meaningful growth.\n\nRevenue increased by 24%, driven primarily by expansion within enterprise accounts.\n\nEnterprise customers represented 62% of total revenue.\n\nNet revenue retention reached 118%, reflecting deeper adoption and sustained customer engagement.\n\nThe finance team paired commercial momentum with a disciplined approach to investment. This report brings the key findings into one place.",
+        "extraction_version": "demo-v2"
+      },
+      {
+        "page": 2,
+        "text": "ACME / RESEARCH & STRATEGY\n\nA clear plan for the year ahead.\n\nThe principal planning risks are slower enterprise purchase cycles and increased infrastructure costs.\n\nThe team will prioritize customer retention and platform reliability.\n\nInvestments will be introduced in stages, with quarterly checkpoints to review progress.\n\nThe next planning review is scheduled for 15 November 2025.",
+        "extraction_version": "demo-v2"
+      }
+    ],
+    "answers": [
+      {
+        "question": "What drove revenue growth this year?",
+        "label": "Revenue growth",
+        "answer": "Revenue grew 24%, driven by enterprise account expansion. Enterprise customers contributed 62% of total revenue.",
+        "sources": [
+          {
+            "citation_id": "annual-0-0",
+            "document_id": "annual",
+            "filename": "Annual report 2025.docx",
+            "page": 1,
+            "page_char_start": 58,
+            "page_char_end": 141,
+            "quote": "Revenue increased by 24%, driven primarily by expansion within enterprise accounts.",
+            "content": "Revenue increased by 24%, driven primarily by expansion within enterprise accounts.",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited"
+          },
+          {
+            "citation_id": "annual-0-1",
+            "document_id": "annual",
+            "filename": "Annual report 2025.docx",
+            "page": 1,
+            "page_char_start": 143,
+            "page_char_end": 197,
+            "quote": "Enterprise customers represented 62% of total revenue.",
+            "content": "Enterprise customers represented 62% of total revenue.",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited"
+          }
+        ]
+      },
+      {
+        "question": "What are the main risks?",
+        "label": "Main risks",
+        "answer": "The report identifies slower enterprise purchase cycles and increased infrastructure costs as the main planning risks.",
+        "sources": [
+          {
+            "citation_id": "annual-1-0",
+            "document_id": "annual",
+            "filename": "Annual report 2025.docx",
+            "page": 2,
+            "page_char_start": 62,
+            "page_char_end": 164,
+            "quote": "The principal planning risks are slower enterprise purchase cycles and increased infrastructure costs.",
+            "content": "The principal planning risks are slower enterprise purchase cycles and increased infrastructure costs.",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited"
+          }
+        ]
+      },
+      {
+        "question": "What does the report say about retention?",
+        "label": "Retention",
+        "answer": "Net revenue retention reached 118%, reflecting deeper adoption and sustained customer engagement.",
+        "sources": [
+          {
+            "citation_id": "annual-2-0",
+            "document_id": "annual",
+            "filename": "Annual report 2025.docx",
+            "page": 1,
+            "page_char_start": 199,
+            "page_char_end": 296,
+            "quote": "Net revenue retention reached 118%, reflecting deeper adoption and sustained customer engagement.",
+            "content": "Net revenue retention reached 118%, reflecting deeper adoption and sustained customer engagement.",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited"
+          }
+        ]
+      }
+    ],
+    "initial": true,
+    "size": 37997
+  },
+  {
+    "id": "cash",
+    "filename": "Cash flow model.xlsx",
+    "pages": [
+      {
+        "page": 1,
+        "text": "ACME CASH FLOW\tFY 2024\tFY 2025\nOperating cash flow\t6.1\t8.4\nClosing cash balance\t10\t14.2\nInvesting outflow\t1.6\t2.1\nAll amounts in USD millions; fictional sample\t\t",
+        "extraction_version": "demo-v2"
+      },
+      {
+        "page": 2,
+        "text": "ASSUMPTION\tDETAIL\nBorrowing\tNo new borrowing is assumed next quarter.\nCollections\tCollections improved during the year.",
+        "extraction_version": "demo-v2"
+      }
+    ],
+    "answers": [
+      {
+        "question": "How strong is our cash position?",
+        "label": "Cash position",
+        "answer": "Closing cash was $14.2 million, up from $10.0 million in FY 2024. Operating cash flow increased to $8.4 million.",
+        "sources": [
+          {
+            "citation_id": "cash-0-0",
+            "document_id": "cash",
+            "filename": "Cash flow model.xlsx",
+            "page": 1,
+            "page_char_start": 80,
+            "page_char_end": 87,
+            "quote": "10\t14.2",
+            "content": "10\t14.2",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited",
+            "anchor": {
+              "format": "xlsx",
+              "sheet_name": "Summary",
+              "sheet_index": 0,
+              "range": "B3:C3"
+            }
+          },
+          {
+            "citation_id": "cash-0-1",
+            "document_id": "cash",
+            "filename": "Cash flow model.xlsx",
+            "page": 1,
+            "page_char_start": 51,
+            "page_char_end": 58,
+            "quote": "6.1\t8.4",
+            "content": "6.1\t8.4",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited",
+            "anchor": {
+              "format": "xlsx",
+              "sheet_name": "Summary",
+              "sheet_index": 0,
+              "range": "B2:C2"
+            }
+          }
+        ]
+      },
+      {
+        "question": "What assumptions does the cash model use?",
+        "label": "Assumptions",
+        "answer": "The model assumes no new borrowing next quarter and improved collections.",
+        "sources": [
+          {
+            "citation_id": "cash-1-0",
+            "document_id": "cash",
+            "filename": "Cash flow model.xlsx",
+            "page": 2,
+            "page_char_start": 28,
+            "page_char_end": 69,
+            "quote": "No new borrowing is assumed next quarter.",
+            "content": "No new borrowing is assumed next quarter.",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited",
+            "anchor": {
+              "format": "xlsx",
+              "sheet_name": "Assumptions",
+              "sheet_index": 1,
+              "range": "B2"
+            }
+          }
+        ]
+      }
+    ],
+    "initial": true,
+    "size": 5831
+  },
+  {
+    "id": "board",
+    "filename": "Board update.pptx",
+    "pages": [
+      {
+        "page": 1,
+        "text": "Evidence into decisions\n\nThe board recommends staged investment while monitoring infrastructure costs.",
+        "extraction_version": "demo-v2"
+      },
+      {
+        "page": 2,
+        "text": "Three priorities for the next quarter\n\nPrioritize customer retention, platform reliability, and carefully sequenced product expansion.",
+        "extraction_version": "demo-v2"
+      }
+    ],
+    "answers": [
+      {
+        "question": "What does the board recommend?",
+        "label": "Board decision",
+        "answer": "The board recommends staged investment while monitoring infrastructure costs.",
+        "sources": [
+          {
+            "citation_id": "board-0-0",
+            "document_id": "board",
+            "filename": "Board update.pptx",
+            "page": 1,
+            "page_char_start": 25,
+            "page_char_end": 102,
+            "quote": "The board recommends staged investment while monitoring infrastructure costs.",
+            "content": "The board recommends staged investment while monitoring infrastructure costs.",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited",
+            "anchor": {
+              "format": "pptx",
+              "slide_index": 0,
+              "shape_id": 4,
+              "quote": "The board recommends staged investment while monitoring infrastructure costs.",
+              "offset": 0
+            }
+          }
+        ]
+      },
+      {
+        "question": "What are the priorities?",
+        "label": "Priorities",
+        "answer": "The priorities are customer retention, platform reliability and carefully sequenced product expansion.",
+        "sources": [
+          {
+            "citation_id": "board-1-0",
+            "document_id": "board",
+            "filename": "Board update.pptx",
+            "page": 2,
+            "page_char_start": 39,
+            "page_char_end": 134,
+            "quote": "Prioritize customer retention, platform reliability, and carefully sequenced product expansion.",
+            "content": "Prioritize customer retention, platform reliability, and carefully sequenced product expansion.",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited",
+            "anchor": {
+              "format": "pptx",
+              "slide_index": 1,
+              "shape_id": 4,
+              "quote": "Prioritize customer retention, platform reliability, and carefully sequenced product expansion.",
+              "offset": 0
+            }
+          }
+        ]
+      }
+    ],
+    "initial": true,
+    "size": 29692
+  },
+  {
+    "id": "memo",
+    "filename": "Customer research memo.docx",
+    "pages": [
+      {
+        "page": 1,
+        "text": "ACME / RESEARCH & STRATEGY\n\nListen before expanding.\n\nThe research team interviewed twelve customers. Their top request was a clearer connection between answers and source passages.\n\nParticipants wanted to keep useful passages beside their working notes.\n\nThese findings are fictional and included to demonstrate the upload workflow.",
+        "extraction_version": "demo-v2"
+      }
+    ],
+    "answers": [
+      {
+        "question": "What did customers ask for?",
+        "label": "Customer findings",
+        "answer": "The twelve sample customers asked for a clearer connection between answers and source passages.",
+        "sources": [
+          {
+            "citation_id": "memo-0-0",
+            "document_id": "memo",
+            "filename": "Customer research memo.docx",
+            "page": 1,
+            "page_char_start": 54,
+            "page_char_end": 181,
+            "quote": "The research team interviewed twelve customers. Their top request was a clearer connection between answers and source passages.",
+            "content": "The research team interviewed twelve customers. Their top request was a clearer connection between answers and source passages.",
+            "extraction_version": "demo-v2",
+            "offset_unit": "utf16",
+            "evidence_role": "cited"
+          }
+        ]
+      }
+    ],
+    "initial": false,
+    "size": 37725
+  }
+]

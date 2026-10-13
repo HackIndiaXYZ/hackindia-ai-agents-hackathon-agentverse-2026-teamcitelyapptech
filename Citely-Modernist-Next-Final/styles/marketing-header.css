@@ -1,0 +1,60 @@
+.marketing-header .learn-menu {
+  position: relative;
+  align-self: center;
+}
+.marketing-header .learn-menu summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 8px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.marketing-header .learn-menu summary::-webkit-details-marker { display: none; }
+.marketing-header .learn-menu summary:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+.marketing-header .learn-menu-links {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 230px;
+  padding: 12px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px #0002;
+  display: grid;
+  gap: 8px;
+}
+.marketing-header .learn-menu-links a { display: block; }
+.marketing-header .nav-actions { margin: 0; }
+@media (max-width: 1000px) {
+  .marketing-header {
+    height: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+  .marketing-header .nav-actions { grid-column: 2; grid-row: 1; justify-self: end; }
+  .marketing-header nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .marketing-header nav a, .marketing-header .learn-menu summary { font-size: .875rem; }
+}
+@media (max-width: 360px) {
+  .marketing-header { padding-left: 12px; padding-right: 12px; }
+  /* About 10px of room to spare at 320px, so small font-rendering
+     differences between systems can't push the header off screen. */
+  .marketing-header { column-gap: 6px; }
+  .marketing-header .wordmark { font-size: 19px; gap: 4px; }
+  .marketing-header .nav-actions { gap: 5px; }
+  .marketing-header .mode-switch { min-width: 26px; }
+  .marketing-header .btn.small { gap: 6px; padding-left: 6px; padding-right: 6px; }
+}

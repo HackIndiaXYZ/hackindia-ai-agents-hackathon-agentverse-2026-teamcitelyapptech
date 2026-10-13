@@ -1,0 +1,16 @@
+node_modules
+.next/
+out/
+.env*
+!.env.example
+tsconfig.tsbuildinfo
+public/studio-api.js
+public/viewers/
+reference-modernist/
+playwright-report/
+test-results/
+.openai/
+.DS_Store
+
+public/studio-demo.js
+public/demo-citely.css

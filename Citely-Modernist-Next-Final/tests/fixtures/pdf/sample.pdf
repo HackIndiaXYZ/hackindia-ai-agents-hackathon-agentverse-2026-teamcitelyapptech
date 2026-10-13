@@ -1,0 +1,67 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 119 >>
+stream
+BT
+/F1 14 Tf
+72 700 Td
+20 TL
+(Quarterly revenue grew by twelve percent.) Tj
+T* (Enterprise sales led the growth.) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 85 >>
+stream
+BT
+/F1 14 Tf
+72 700 Td
+20 TL
+(Costs were flat.) Tj
+T* (Headcount stayed at 40.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 35 >>
+stream
+0.8 0.85 0.9 rg
+72 300 468 200 re f
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000323 00000 n 
+0000000493 00000 n 
+0000000619 00000 n 
+0000000754 00000 n 
+0000000880 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+965
+%%EOF

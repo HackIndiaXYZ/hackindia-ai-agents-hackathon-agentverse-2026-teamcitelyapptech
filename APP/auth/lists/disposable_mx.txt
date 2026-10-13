@@ -1,0 +1,194 @@
+# Mail servers that belong to temporary / disposable email services.
+#
+# Why: temp-mail sites hand out brand-new domains every few days, so any list
+# of domains falls behind. Their new domains still point their MX records at
+# the same few mail servers, so an address whose domain's mail goes to one of
+# these servers is refused even when the domain itself is on no list
+# (APP/disposable.py, infrastructure_match).
+#
+# How it was built (2026-10-11), with scripts/disposable_mx_survey.py:
+#   - resolved MX (A as the fallback) and the mail servers' addresses for
+#     37,513 known disposable domains: all of disposable-email-domains and
+#     7c/fakefilter (whose "## provider" headings name the service behind each
+#     domain) plus a random 25,000 of mailchecker, burner-email-providers and
+#     ivolo/disposable-email-domains; 8,106 of them answered with a mail server;
+#   - and for domains the services were handing out that day: mail.tm
+#     /domains API, temp-mail.io domains API, yopmail's domain list,
+#     guerrillamail, tempmail.plus, mohmal, moakt, fakemailgenerator,
+#     generator.email / emailfake.com, 10minutemail.net, mailinator, maildrop,
+#     dropmail, tempr.email, temp-mail.us, tempmail.so, tempm.com.
+#     temp-mail.org, 10minutemail.com, emailondeck and tempail block scripted
+#     visits (Cloudflare); their servers are identified through fakefilter's
+#     provider headings instead. tempmail.com is a parked page today.
+#   - kept a server only when it serves many disposable domains (the count is
+#     on each line) or is a temp-mail service's own named server, and its
+#     address is a dedicated machine (not a shared web or mail host).
+#
+# Deliberately NOT here, although many disposable domains use them: Google,
+# Microsoft 365, Zoho, Yandex, Proton, Fastmail, iCloud, Namecheap
+# (privateemail, eforward, web-hosting, jellyfish), GoDaddy, Titan, Hostinger,
+# IONOS, OVH, Gandi, Rackspace, Strato, Timeweb, Spaceship, Regery, ImprovMX,
+# ForwardEmail, Cloudflare Email Routing, Mailgun, Amazon SES, SendGrid,
+# AWS Global Accelerator and parking hosts. Real organisations use them; the
+# domain list catches the disposable domains there. APP/disposable.py also
+# refuses to treat any of them as disposable infrastructure, whatever this
+# file says.
+#
+# Format: one entry per line, "# ..." comments. A name matches an MX host
+# equal to it or under it (wabblywabble.com matches mail.wabblywabble.com).
+# An address or network matches the address an MX host resolves to.
+# Rebuild: run the survey, review its top hosts/addresses, edit by hand.
+
+# --- Mail host names ------------------------------------------------------- #
+# temp-mail.org (306 domains under fakefilter's "temp-mail.org" heading)
+wabblywabble.com             # 471 disposable domains
+wallywatts.com               # 471
+# generator.email / emailfake.com / email-fake.com / tempm.com (one operator)
+generator.email              # 587
+emailfake.com                # 382
+email-fake.com               # 31
+tempm.com                    # 51
+# 10minutemail.com and temp-mail.io
+beavis99.com                 # 104
+beavis99.net                 # 104
+10minutemail.com             # prd-smtp.10minutemail.com
+temp-mail.io                 # forwardN.mail.temp-mail.io
+# EmailOnDeck and its sister servers (same "em4/mx4" naming, same hosting)
+brushemail.com               # 42
+aerospaceemail.com           # 31
+bumpemail.com                # 26
+patternemail.com             # 16
+burnserver.com               # 8
+hubblehost.com               # 8
+rejecthost.com               # 43
+catchservers.com             # 41
+catchservers.net             # 41
+mainnetmail.com              # 35
+# Others with a large share
+email.chatgpt.org.uk         # 536
+email.gravityengine.cc       # 327
+cleantempmail.com            # 15
+tinyhost.shop                # 273
+casadorock.com               # 221
+oneb.net                     # 118
+tempmail.tw                  # 105
+vietxf.com                   # 104
+m1bp.com                     # 26
+mb1p.com
+mb5p.com                     # 26
+erinn.biz                    # 84, kuku.lu (Japan)
+eye-mail.net                 # 45
+papierkorb.me                # 35, muellmail.com
+unstablemail.com             # 24
+# Named temp-mail services (their own mail servers)
+mail.tm                      # 79, in.mail.tm
+mail.gw                      # in.mail.gw
+mailinator.com               # 77
+yopmail.com                  # 60
+guerrillamail.com            # guerrillamail, sharklasers, grr.la, pokemail
+guerrillamailblock.com
+pokemail.net
+spam4.me                     # 12
+fex.plus                     # tempmail.plus
+mailna.co                    # mohmal
+mozej.com                    # mohmal
+mohmal.in                    # mohmal
+moakt.com                    # 13
+fakemailgenerator.com
+dropmail.me                  # dropmail (10mail.org, emlhub.com, emlpro.com, ...)
+10mail.org
+discard.email                # 26, tempr.email
+trashmailr.com               # tempr.email
+trashmail.com                # 19
+trashmail.de
+maildrop.cc
+mailnesia.com
+harakirimail.com
+byom.de
+dropoffs.org                 # disposablemail.com
+laoia.com                    # 10minutemail.net
+temp-mail-pro.com            # tempmail.so
+cybertemp.xyz                # 31
+mail.td                      # 10
+smtp.dev                     # 9, mail-temp.com
+215.im                       # 8
+mailcore.email               # 11
+nukemail.app                 # 8
+balansor.com                 # 8
+m1lf.party                   # 8
+blueberrymail.net            # 12
+spamgourmet.com              # 14
+altaddress.net               # 10
+unblock.news                 # emailnator
+mail-temporaire.fr
+tempmail.id.vn
+temporary-mail.net
+deepmails.org
+48hr.email
+
+# --- Mail server addresses (dedicated machines only) ----------------------- #
+91.196.52.205                # 1055, generator.email / emailfake.com
+138.226.240.26               # 875, chatgpt.org.uk / gravityengine.cc / cleantempmail
+116.202.9.167                # 471, temp-mail.org
+142.132.166.12               # 471, temp-mail.org
+188.166.111.252              # 471, temp-mail.org
+46.101.111.206               # 471, temp-mail.org
+144.91.107.45                # 273, tinyhost.shop
+5.78.44.170                  # 221, casadorock.com
+13.140.134.192               # 209, tempmail.tw / vietxf.com
+87.98.164.155                # 123, yopmail
+40.160.59.197                # 119, oneb.net
+188.245.74.208               # 104, 10minutemail.com / temp-mail.io
+195.201.18.63                # 104, 10minutemail.com / temp-mail.io
+95.216.191.158               # all 7 domains temp-mail.io hands out today (mail.<domain>); PTR forward3.mail.temp-mail.io
+91.121.173.87                # forward1.mail.temp-mail.io
+136.243.103.68               # forward2.mail.temp-mail.io
+78.47.124.133                # 98, dropmail
+94.130.108.80                # 98, dropmail
+157.230.203.88               # 89 random five-letter domains, mail on the domain itself
+49.12.18.190                 # 79, mail.tm
+135.181.20.167               # mail.gw
+133.130.102.153              # 79, kuku.lu
+133.130.108.233              # 79, kuku.lu
+133.130.91.161               # 79, kuku.lu
+133.130.91.97                # 79, kuku.lu
+160.251.107.128              # 79, kuku.lu
+160.251.81.146               # 79, kuku.lu
+160.251.83.234               # 79, kuku.lu
+23.239.11.30                 # 72, mailinator
+45.33.83.75                  # mailinator
+138.197.239.249              # 47 made-up-word domains, mail on the domain itself
+164.90.194.37                # 45, eye-mail.net
+65.109.161.215               # 45, eye-mail.net
+147.182.130.78               # 43, m1bp / mb5p
+147.182.160.18               # 43
+147.182.180.139              # 43
+147.182.189.184              # 43
+164.90.197.105               # 43
+164.90.197.143               # 43
+164.90.197.162               # 43
+164.90.197.79                # 43
+165.22.204.99                # 43, rejecthost
+165.22.205.213               # 43, rejecthost
+134.122.50.100               # 42, brushemail (EmailOnDeck)
+146.190.78.248               # 42, brushemail
+137.184.154.224              # 39, catchservers
+37.27.136.159                # 35, muellmail
+142.93.233.86                # 35, mainnetmail
+146.190.78.66                # 31, aerospaceemail (EmailOnDeck)
+64.227.71.107                # 31, aerospaceemail
+45.134.39.50                 # 31, cybertemp
+159.195.62.192               # 26, tempr.email
+49.13.117.11                 # 22, bumpemail (EmailOnDeck)
+5.161.193.72                 # 22, bumpemail
+178.162.170.166              # 22, guerrillamail
+146.190.223.124              # 20, unstablemail
+157.90.89.149                # 18, trashmail.com
+15.204.213.223               # 17, getairmail / dropjar / fivermail
+146.190.70.149               # 16, patternemail
+167.172.35.233               # 16, patternemail
+64.31.34.26                  # 13, moakt
+193.108.118.7                # 8, tempmail.plus
+165.22.193.184               # 8, burnserver
+116.202.179.9                # mohmal
+213.239.209.163              # maildrop

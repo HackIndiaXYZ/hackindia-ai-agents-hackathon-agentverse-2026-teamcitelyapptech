@@ -1,0 +1,149 @@
+# Domains that are never treated as temporary / disposable, whatever any
+# imported list says (APP/disposable.py). Mainstream mailbox providers whose
+# users are real people, and the free alias/forwarding services that deliver
+# to a person's permanent inbox. A subdomain matches its parent.
+#
+# Reviewed 2026-10-11. The weekly refresh (scripts/refresh_disposable_lists.py)
+# drops these from the imported snapshot too, and also honours the upstream
+# disposable-email-domains allowlist.
+# Google
+gmail.com
+googlemail.com
+google.com
+# Microsoft
+outlook.com
+hotmail.com
+live.com
+msn.com
+passport.com
+outlook.in
+outlook.co.in
+hotmail.co.uk
+hotmail.fr
+hotmail.de
+hotmail.it
+hotmail.es
+live.in
+live.co.uk
+microsoft.com
+# Yahoo / AOL
+yahoo.com
+yahoo.co.in
+yahoo.in
+yahoo.co.uk
+yahoo.co.jp
+yahoo.fr
+yahoo.de
+yahoo.es
+yahoo.it
+yahoo.com.br
+yahoo.ca
+yahoo.com.au
+ymail.com
+rocketmail.com
+aol.com
+aim.com
+verizon.net
+att.net
+# Apple
+icloud.com
+me.com
+mac.com
+privaterelay.appleid.com
+# Privacy-first and paid providers
+proton.me
+protonmail.com
+protonmail.ch
+pm.me
+tutanota.com
+tutanota.de
+tuta.io
+tuta.com
+tutamail.com
+keemail.me
+fastmail.com
+fastmail.fm
+messagingengine.com
+hey.com
+mailbox.org
+posteo.de
+posteo.net
+runbox.com
+startmail.com
+skiff.com
+# Zoho
+zoho.com
+zoho.in
+zoho.eu
+zohomail.com
+zohomail.in
+zohomail.eu
+# Regional mainstream providers
+yandex.com
+yandex.ru
+ya.ru
+mail.ru
+inbox.ru
+list.ru
+bk.ru
+rambler.ru
+gmx.com
+gmx.net
+gmx.de
+gmx.at
+gmx.ch
+web.de
+t-online.de
+freenet.de
+orange.fr
+wanadoo.fr
+free.fr
+sfr.fr
+laposte.net
+libero.it
+virgilio.it
+tiscali.it
+seznam.cz
+wp.pl
+o2.pl
+onet.pl
+interia.pl
+rediffmail.com
+qq.com
+163.com
+126.com
+yeah.net
+sina.com
+sohu.com
+aliyun.com
+naver.com
+daum.net
+hanmail.net
+btinternet.com
+sky.com
+virginmedia.com
+comcast.net
+cox.net
+charter.net
+sbcglobal.net
+bigpond.com
+optusnet.com.au
+shaw.ca
+rogers.com
+uol.com.br
+bol.com.br
+terra.com.br
+mail.com
+email.com
+usa.com
+# Relays run by large companies, tied to one person's account (DuckDuckGo,
+# Firefox Relay, Apple). Smaller alias services that hand out unlimited
+# throwaway aliases (SimpleLogin, addy.io, ...) stay refused as the imported
+# lists say.
+duck.com
+mozmail.com
+relay.firefox.com
+# Found in the imported lists but used by real people or organisations
+21cn.com
+sify.com
+it.com

@@ -1,0 +1,29 @@
+.product-screenshot {
+  margin: 32px 0 40px;
+}
+.product-screenshot > a {
+  display: block;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+.product-screenshot > a:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+.product-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.product-screenshot > .product-screenshot-dark { display: none; }
+html[data-theme="dark"] .product-screenshot > .product-screenshot-light { display: none; }
+html[data-theme="dark"] .product-screenshot > .product-screenshot-dark { display: block; }
+.product-screenshot figcaption {
+  display: grid;
+  gap: 6px;
+  padding-top: 12px;
+  font-size: .875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.product-screenshot figcaption small { font-size: .8125rem; }

@@ -1,0 +1,40 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic
+pydantic-settings
+python-dotenv
+pypdf
+langchain-core
+langchain-text-splitters
+langchain-openai
+openai
+qdrant-client
+rank-bm25
+flashrank
+numpy
+aiofiles
+structlog
+tiktoken
+pyjwt
+bcrypt
+azure-communication-email
+httpx
+slowapi
+azure-ai-documentintelligence
+# Native .xlsx pass (NATIVE_CHUNKS_XLSX). Pinned: citation anchors depend on
+# its cell addressing matching SheetJS in the viewer — see tests/test_xlsx_native.py.
+openpyxl==3.1.5
+# Native .pptx pass (NATIVE_CHUNKS_PPTX). Pinned for the same reason: shape ids
+# and text must match the slide renderer — see tests/test_pptx_native.py.
+python-pptx==1.0.2
+# Sign-up email check: does the domain receive mail (MX lookup).
+dnspython==2.7.0
+# Country of a visitor for the admin activity log, read from an offline
+# database baked into the image (docker/fetch_models.py). No IP is stored.
+maxminddb==3.2.0
+# Optional cache tier in front of the per-query BM25 read off Azure Files.
+# The app runs fine without REDIS_URL set — see APP/rag/cache.py.
+redis
+pyyaml
+pillow

@@ -1,0 +1,4176 @@
+* {
+  box-sizing: border-box;
+}
+.app-design button,
+.app-design input,
+.app-design textarea,
+.app-design select {
+  font: inherit;
+}
+.app-design button,
+.app-design a,
+.app-design input,
+.app-design textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+.app-design button {
+  cursor: pointer;
+  color: inherit;
+  border: 0;
+  background: none;
+}
+.app-design button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.app-design button:focus-visible,
+.app-design a:focus-visible,
+.app-design input:focus-visible,
+.app-design textarea:focus-visible,
+.app-design summary:focus-visible {
+  outline: var(--dimension-2px) solid var(--accent);
+  outline-offset: var(--dimension-3px);
+}
+.app-design a {
+  color: inherit;
+  text-decoration: none;
+}
+.app-design svg {
+  width: var(--dimension-19px);
+  height: var(--dimension-19px);
+  flex-shrink: 0;
+}
+.app-design button svg {
+  vertical-align: middle;
+}
+.app-design h1,
+.app-design h2,
+.app-design h3,
+.app-design p {
+  margin: 0;
+}
+.app-design h1,
+.app-design h2,
+.app-design h3 {
+  line-height: 1.18;
+}
+.app-design p {
+  color: var(--muted);
+}
+.app-design h1 {
+  font-size: var(--dimension-36px);
+  letter-spacing: var(--dimension--1-3px);
+}
+.app-design h2 {
+  font-size: var(--dimension-20px);
+  letter-spacing: var(--dimension---4px);
+}
+.app-design h3 {
+  font-size: var(--dimension-16px);
+}
+.app-design input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: var(--dimension-15px);
+  height: var(--dimension-15px);
+  cursor: pointer;
+}
+.app-design input,
+.app-design textarea,
+.app-design select {
+  color: var(--ink);
+}
+.app-design #root {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+.app-design .boot {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dimension-18px);
+  font-size: var(--dimension-32px);
+  letter-spacing: var(--dimension--1px);
+}
+.app-design .boot span {
+  font-size: var(--dimension-15px);
+  letter-spacing: 0;
+  max-width: var(--dimension-500px);
+  text-align: center;
+}
+.app-design .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dimension-9px);
+  white-space: nowrap;
+}
+.app-design .brand strong {
+  font-size: var(--dimension-25px);
+  letter-spacing: var(--dimension--1px);
+  font-weight: 700;
+}
+.app-design .logo-mark {
+  width: var(--dimension-29px);
+  height: var(--dimension-32px);
+  border-radius: var(--dimension-7px);
+  background: var(--accent);
+  color: var(--source-color-33);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.app-design .logo-mark svg {
+  width: var(--dimension-21px);
+  height: var(--dimension-23px);
+  stroke-width: 1.6;
+}
+.app-design .logo-mark b {
+  position: absolute;
+  right: var(--dimension--3px);
+  bottom: var(--dimension--3px);
+  background: var(--source-color-34);
+  color: var(--source-color-35);
+  width: var(--dimension-13px);
+  height: var(--dimension-13px);
+  font-size: var(--dimension-9px);
+  border-radius: var(--dimension-50pct);
+  display: grid;
+  place-items: center;
+  border: var(--dimension-1px) solid var(--surface);
+}
+.app-design .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dimension-7px);
+  padding: var(--dimension-9px) var(--dimension-13px);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--radius);
+  font-size: var(--dimension-13px);
+  font-weight: 500;
+  background: var(--surface);
+  white-space: nowrap;
+  transition:
+    background 0.18s,
+    transform 0.18s,
+    border 0.18s;
+}
+.app-design .button svg {
+  width: var(--dimension-16px);
+  height: var(--dimension-16px);
+}
+.app-design .button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--source-color-33);
+}
+.app-design .button.quiet {
+  background: transparent;
+}
+.app-design .button:hover {
+  border-color: var(--accent);
+}
+.app-design .button.primary:hover {
+  filter: brightness(1.08);
+}
+.app-design .button:active {
+  transform: translateY(var(--dimension-1px));
+}
+.app-design .icon-button {
+  width: var(--dimension-32px);
+  height: var(--dimension-32px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--dimension-6px);
+  border: var(--dimension-1px) solid var(--line);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+.app-design .text-button {
+  font-size: var(--dimension-12px);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dimension-6px);
+  color: var(--accent);
+  padding: var(--dimension-4px) 0;
+}
+.app-design .text-button svg {
+  width: var(--dimension-15px);
+  height: var(--dimension-15px);
+}
+.app-design .eyebrow {
+  font-size: var(--dimension-10px);
+  letter-spacing: var(--dimension-1-6px);
+  display: block;
+  color: var(--muted);
+  font-weight: 600;
+}
+.app-design .muted {
+  font-size: var(--dimension-12px);
+  color: var(--muted);
+}
+.app-design .fine-print {
+  font-size: var(--dimension-12px);
+  line-height: 1.7;
+  margin: var(--dimension-18px) 0;
+  color: var(--muted);
+}
+.app-design .inline-actions {
+  display: flex;
+  gap: var(--dimension-10px);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.app-design .avatar {
+  display: grid;
+  place-items: center;
+  width: var(--dimension-30px);
+  height: var(--dimension-30px);
+  border-radius: var(--dimension-50pct);
+  font-size: var(--dimension-10px);
+  background: var(--tint);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.app-design .avatars {
+  display: inline-flex;
+  padding-left: var(--dimension-6px);
+}
+.app-design .avatars span {
+  margin-left: var(--dimension--6px);
+  width: var(--dimension-42px);
+  height: var(--dimension-42px);
+  display: grid;
+  place-items: center;
+  font-size: var(--dimension-12px);
+  border: var(--dimension-2px) solid var(--surface);
+  border-radius: var(--dimension-50pct);
+  background: var(--tint);
+  color: var(--accent);
+}
+.app-design .avatars span:nth-child(2) {
+  background: var(--source-color-36);
+  color: var(--source-color-37);
+}
+.app-design .avatars span:nth-child(3) {
+  background: var(--source-color-38);
+  color: var(--source-color-39);
+}
+.app-design .avatars.small span {
+  width: var(--dimension-24px);
+  height: var(--dimension-24px);
+  font-size: var(--dimension-8px);
+}
+.app-design .library-shell {
+  display: grid;
+  grid-template-columns: var(--dimension-195px) minmax(0, 1fr);
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+.app-design .library-nav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--dimension-24px) var(--dimension-15px) var(--dimension-20px);
+  border-right: var(--dimension-1px) solid var(--line);
+  background: var(--surface);
+  gap: var(--dimension-28px);
+}
+.app-design .library-nav > .brand {
+  margin-left: var(--dimension-10px);
+}
+.app-design .workspace-button {
+  border: var(--dimension-1px) solid var(--line);
+  background: var(--bg);
+  border-radius: var(--dimension-7px);
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-7px);
+  padding: var(--dimension-9px) var(--dimension-7px);
+  text-align: left;
+  min-width: 0;
+}
+.app-design .workspace-button > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+.app-design .workspace-button small,
+.app-design .workspace-button strong {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.app-design .workspace-button small {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  margin-bottom: var(--dimension-3px);
+}
+.app-design .workspace-button strong {
+  font-size: var(--dimension-11px);
+  font-weight: 500;
+}
+.app-design .workspace-button > b {
+  font-size: var(--dimension-12px);
+}
+.app-design .workspace-avatar {
+  width: var(--dimension-26px);
+  height: var(--dimension-27px);
+  background: var(--surface);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-5px);
+  font-size: var(--dimension-9px);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.app-design .library-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dimension-5px);
+}
+.app-design .library-nav nav button {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-11px);
+  padding: var(--dimension-11px) var(--dimension-14px);
+  font-size: var(--dimension-13px);
+  color: var(--muted);
+  text-align: left;
+  border-radius: var(--dimension-7px);
+  transition: 0.2s;
+}
+.app-design .library-nav nav button.active {
+  background: var(--tint);
+  color: var(--accent);
+  font-weight: 600;
+}
+.app-design .nav-bottom {
+  display: flex;
+  gap: var(--dimension-8px);
+  align-items: center;
+  margin-top: auto;
+}
+.app-design .nav-bottom strong {
+  font-size: var(--dimension-11px);
+  display: block;
+}
+.app-design .nav-bottom small {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+}
+.app-design .nav-bottom .appearance {
+  display: none;
+}
+.app-design .library-main {
+  min-width: 0;
+}
+.app-design .library-top {
+  height: var(--dimension-59px);
+  padding: 0 var(--dimension-34px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dimension-15px);
+  border-bottom: var(--dimension-1px) solid var(--line);
+  background: var(--surface);
+}
+.app-design .library-top > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-13px);
+  min-width: 0;
+  white-space: nowrap;
+  font-size: var(--dimension-12px);
+}
+.app-design .library-top > div:first-child span {
+  color: var(--muted);
+}
+.app-design .library-top > div:first-child b {
+  font-weight: 400;
+  color: var(--line);
+}
+.app-design .library-top strong {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app-design .toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-10px);
+}
+.app-design .library-top .button {
+  font-size: var(--dimension-11px);
+  padding: var(--dimension-6px) var(--dimension-10px);
+}
+.app-design .library-content {
+  padding: var(--dimension-37px) var(--dimension-38px) var(--dimension-30px);
+  max-width: var(--dimension-1480px);
+  margin: auto;
+  animation: page-in 0.45s ease both;
+}
+.app-design .library-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--dimension-20px);
+  margin-bottom: var(--dimension-30px);
+}
+.app-design .library-title h1 {
+  margin: var(--dimension-9px) 0 var(--dimension-12px);
+  font-weight: 600;
+}
+.app-design .library-title p {
+  font-size: var(--dimension-14px);
+}
+.app-design .title-actions {
+  display: flex;
+  gap: var(--dimension-8px);
+  flex-shrink: 0;
+  padding-bottom: var(--dimension-4px);
+}
+.app-design .workspace-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-28px);
+  border-top: var(--dimension-1px) solid var(--line);
+  border-bottom: var(--dimension-1px) solid var(--line);
+  padding: var(--dimension-18px) 0;
+  margin-bottom: var(--dimension-32px);
+}
+.app-design .summary-label {
+  font-size: var(--dimension-10px);
+  letter-spacing: var(--dimension-1-2px);
+  color: var(--muted);
+  max-width: var(--dimension-85px);
+}
+.app-design .workspace-summary strong {
+  font-size: var(--dimension-25px);
+  font-weight: 500;
+  letter-spacing: var(--dimension--1px);
+  white-space: nowrap;
+}
+.app-design .workspace-summary strong span {
+  font-size: var(--dimension-12px);
+  letter-spacing: 0;
+  color: var(--muted);
+  font-weight: 400;
+}
+.app-design .workspace-summary p {
+  font-size: var(--dimension-11px);
+  line-height: 1.7;
+  border-left: var(--dimension-1px) solid var(--line);
+  padding-left: var(--dimension-25px);
+  margin-left: auto;
+}
+.app-design .workspace-summary .text-button {
+  margin-left: var(--dimension-15px);
+  font-size: var(--dimension-11px);
+}
+.app-design .finder {
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: 0 var(--dimension-4px) var(--dimension-18px)
+    var(--source-color-40);
+}
+.app-design .finder-toolbar {
+  padding: var(--dimension-15px) var(--dimension-18px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dimension-15px);
+  border-bottom: var(--dimension-1px) solid var(--line);
+}
+.app-design .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-8px);
+  min-width: 0;
+  font-size: var(--dimension-12px);
+}
+.app-design .breadcrumb button {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-7px);
+  padding: 0;
+  color: var(--muted);
+  font-size: var(--dimension-12px);
+  white-space: nowrap;
+}
+.app-design .breadcrumb strong {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app-design .breadcrumb svg {
+  width: var(--dimension-16px);
+}
+.app-design .finder-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-12px);
+}
+.app-design .search {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-8px);
+  padding: var(--dimension-7px) var(--dimension-10px);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-6px);
+  background: var(--bg);
+}
+.app-design .search svg {
+  width: var(--dimension-14px);
+  color: var(--muted);
+}
+.app-design .search input {
+  width: var(--dimension-170px);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: var(--dimension-12px);
+}
+.app-design .view-switch {
+  display: flex;
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-6px);
+  padding: var(--dimension-2px);
+  background: var(--bg);
+}
+.app-design .view-switch button {
+  padding: var(--dimension-3px) var(--dimension-6px);
+  display: flex;
+  border-radius: var(--dimension-4px);
+  color: var(--muted);
+}
+.app-design .view-switch svg {
+  width: var(--dimension-17px);
+  height: var(--dimension-17px);
+}
+.app-design .view-switch button.active {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 var(--dimension-1px) var(--dimension-3px) var(--source-color-41);
+}
+.app-design .selection-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: var(--dimension-42px);
+  padding: var(--dimension-7px) var(--dimension-18px);
+  gap: var(--dimension-15px);
+  border-bottom: var(--dimension-1px) solid var(--line);
+}
+.app-design .selection-bar > label {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-9px);
+  font-size: var(--dimension-11px);
+  white-space: nowrap;
+}
+.app-design .selection-bar > div {
+  display: flex;
+  gap: var(--dimension-17px);
+  align-items: center;
+}
+.app-design .selection-bar .muted {
+  font-size: var(--dimension-10px);
+}
+.app-design .selection-bar.has-selection {
+  background: var(--tint);
+}
+.app-design .selection-bar .text-button {
+  font-size: var(--dimension-11px);
+}
+.app-design .file-collection.list .file-head,
+.app-design .file-collection.list .file-row {
+  display: grid;
+  grid-template-columns: var(--dimension-22px) minmax(
+      var(--dimension-170px),
+      1fr
+    ) var(--dimension-110px) var(--dimension-95px) var(--dimension-135px);
+  align-items: center;
+  gap: var(--dimension-11px);
+  padding: 0 var(--dimension-18px);
+}
+.app-design .file-head {
+  height: var(--dimension-34px);
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  background: var(--bg);
+}
+.app-design .file-collection.list .file-row {
+  min-height: var(--dimension-68px);
+  border-top: var(--dimension-1px) solid var(--line);
+  transition: background 0.18s;
+}
+.app-design .file-row.selected {
+  background: var(--tint) !important;
+}
+.app-design .file-row:hover {
+  background: color-mix(
+    in srgb,
+    var(--tint) var(--dimension-40pct),
+    var(--surface)
+  );
+}
+.app-design .file-name {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-12px);
+  min-width: 0;
+  text-align: left;
+  padding: var(--dimension-8px) 0;
+}
+.app-design .file-name > span:last-child {
+  min-width: 0;
+}
+.app-design .file-name strong {
+  display: block;
+  font-size: var(--dimension-13px);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app-design .file-name small {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  display: block;
+  margin-top: var(--dimension-4px);
+}
+.app-design .file-symbol {
+  width: var(--dimension-32px);
+  height: var(--dimension-38px);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-5px);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: var(--bg);
+  color: var(--muted);
+}
+.app-design .file-symbol svg {
+  width: var(--dimension-19px);
+  height: var(--dimension-22px);
+}
+.app-design .file-symbol.folder {
+  color: var(--accent);
+  background: var(--tint);
+  height: var(--dimension-32px);
+  border: 0;
+}
+.app-design .row-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app-design .row-check input {
+  margin: 0;
+}
+.app-design .file-meta {
+  font-size: var(--dimension-11px);
+  color: var(--muted);
+}
+.app-design .status {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dimension-6px);
+}
+.app-design .status.ready {
+  color: var(--source-color-42);
+}
+.app-design .status.ready:before {
+  content: "";
+  width: var(--dimension-4px);
+  height: var(--dimension-4px);
+  border-radius: var(--dimension-50pct);
+  background: var(--source-color-42);
+}
+.app-design .status.processing {
+  color: var(--source-color-43);
+}
+.app-design .status.processing:before {
+  content: "";
+  width: var(--dimension-7px);
+  height: var(--dimension-7px);
+  border: var(--dimension-1px) solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--dimension-50pct);
+  animation: spin 1s linear infinite;
+}
+.app-design .status.failed {
+  color: var(--source-color-44);
+}
+.app-design .row-action {
+  font-size: var(--dimension-11px);
+  color: var(--accent);
+  text-align: right;
+  white-space: nowrap;
+}
+.app-design .file-collection.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--dimension-15px);
+  padding: var(--dimension-18px);
+}
+.app-design .file-collection.grid .file-row {
+  position: relative;
+  padding: var(--dimension-18px);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--dimension-10px);
+  min-height: var(--dimension-175px);
+  transition:
+    transform 0.22s,
+    box-shadow 0.22s;
+}
+.app-design .file-collection.grid .file-row:hover {
+  transform: translateY(var(--dimension--3px));
+  box-shadow: 0 var(--dimension-8px) var(--dimension-20px)
+    var(--source-color-10);
+}
+.app-design .file-collection.grid .row-check {
+  position: absolute;
+  right: var(--dimension-12px);
+  top: var(--dimension-12px);
+}
+.app-design .file-collection.grid .file-name {
+  flex: 0 0 var(--dimension-100pct);
+  display: block;
+}
+.app-design .file-collection.grid .file-symbol {
+  margin-bottom: var(--dimension-15px);
+}
+.app-design .file-collection.grid .file-name strong {
+  white-space: normal;
+}
+.app-design .file-collection.grid .file-meta {
+  font-size: var(--dimension-10px);
+  flex: 1;
+}
+.app-design .file-collection.grid .row-action {
+  flex: 0 0 var(--dimension-100pct);
+  border-top: var(--dimension-1px) solid var(--line);
+  padding-top: var(--dimension-10px);
+  margin-top: var(--dimension-3px);
+  text-align: left;
+}
+.app-design .finder-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--dimension-15px);
+  padding: var(--dimension-11px) var(--dimension-18px);
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  border-top: var(--dimension-1px) solid var(--line);
+  background: var(--bg);
+}
+.app-design .library-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--dimension-22px);
+  font-size: var(--dimension-9px);
+  letter-spacing: var(--dimension-1px);
+  color: var(--muted);
+}
+.app-design .empty {
+  text-align: center;
+  padding: var(--dimension-60px) var(--dimension-20px);
+}
+.app-design .empty > span {
+  display: block;
+  color: var(--muted);
+  margin-bottom: var(--dimension-15px);
+}
+.app-design .empty > span svg {
+  width: var(--dimension-35px);
+  height: var(--dimension-35px);
+}
+.app-design .empty p {
+  font-size: var(--dimension-13px);
+  margin: var(--dimension-10px) 0 var(--dimension-18px);
+}
+.app-design .overview-content {
+  max-width: var(--dimension-1230px);
+  margin: auto;
+  padding: var(--dimension-40px);
+}
+.app-design .overview-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--dimension-65px);
+  align-items: center;
+  padding: var(--dimension-20px) 0 var(--dimension-50px);
+}
+.app-design .overview-hero h1 {
+  font-size: var(--dimension-57px);
+  line-height: 1.07;
+  letter-spacing: var(--dimension--2-5px);
+  margin: var(--dimension-18px) 0 var(--dimension-25px);
+}
+.app-design .overview-hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+.app-design .overview-hero p {
+  font-size: var(--dimension-15px);
+  line-height: 1.85;
+  max-width: var(--dimension-420px);
+  margin-bottom: var(--dimension-24px);
+}
+.app-design .editorial-sample {
+  padding: var(--dimension-26px);
+  border: var(--dimension-1px) solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius);
+  position: relative;
+  box-shadow: var(--dimension-10px) var(--dimension-12px) 0 var(--tint);
+}
+.app-design .sample-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--dimension-10px);
+  letter-spacing: var(--dimension-1-5px);
+  border-bottom: var(--dimension-1px) solid var(--line);
+  padding-bottom: var(--dimension-20px);
+  margin-bottom: var(--dimension-24px);
+}
+.app-design .sample-top span {
+  font-size: var(--dimension-18px);
+  letter-spacing: var(--dimension--1px);
+}
+.app-design .editorial-sample h2 {
+  font-size: var(--dimension-33px);
+  letter-spacing: var(--dimension--1px);
+  margin-bottom: var(--dimension-20px);
+}
+.app-design .sample-answer {
+  font-size: var(--dimension-16px);
+  line-height: 1.8;
+}
+.app-design .sample-answer strong {
+  font-size: var(--dimension-22px);
+  color: var(--accent);
+}
+.app-design .sample-answer sup {
+  padding: var(--dimension-2px) var(--dimension-4px);
+  background: var(--tint);
+  color: var(--accent);
+  font-size: var(--dimension-10px);
+  margin-left: var(--dimension-3px);
+}
+.app-design .sample-source {
+  font-size: var(--dimension-10px);
+  line-height: 2.3;
+  letter-spacing: var(--dimension--6px);
+  border-top: var(--dimension-1px) solid var(--line);
+  padding-top: var(--dimension-16px);
+  margin: var(--dimension-20px) 0;
+}
+.app-design .sample-source mark {
+  background: var(--tint);
+  color: var(--ink);
+  font-size: var(--dimension-13px);
+  letter-spacing: 0;
+}
+.app-design .workflow-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--dimension-30px);
+  border-top: var(--dimension-1px) solid var(--line);
+  border-bottom: var(--dimension-1px) solid var(--line);
+  padding: var(--dimension-30px) 0;
+  margin: var(--dimension-25px) 0 var(--dimension-45px);
+}
+.app-design .workflow-strip > div > span {
+  font-size: var(--dimension-12px);
+  color: var(--accent);
+}
+.app-design .workflow-strip h3 {
+  margin: var(--dimension-15px) 0 var(--dimension-9px);
+  font-size: var(--dimension-20px);
+}
+.app-design .workflow-strip p {
+  font-size: var(--dimension-13px);
+  line-height: 1.7;
+}
+.app-design .faq {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--dimension-60px);
+}
+.app-design .faq h2 {
+  font-size: var(--dimension-29px);
+  margin-top: var(--dimension-12px);
+}
+.app-design .faq details {
+  border-bottom: var(--dimension-1px) solid var(--line);
+  padding: var(--dimension-17px) 0;
+}
+.app-design .faq summary {
+  font-size: var(--dimension-14px);
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--dimension-20px);
+}
+.app-design .faq summary:after {
+  content: "+";
+  color: var(--muted);
+}
+.app-design .faq details[open] summary:after {
+  content: "−";
+}
+.app-design .faq details p {
+  font-size: var(--dimension-13px);
+  line-height: 1.85;
+  margin-top: var(--dimension-14px);
+}
+.app-design .team-introduction {
+  border: var(--dimension-1px) solid var(--line);
+  background: var(--surface);
+  padding: var(--dimension-28px);
+  display: flex;
+  gap: var(--dimension-30px);
+  align-items: center;
+}
+.app-design .team-introduction p {
+  font-size: var(--dimension-14px);
+  margin-top: var(--dimension-10px);
+}
+.app-design .team-conversations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--dimension-17px);
+  margin-top: var(--dimension-30px);
+}
+.app-design .team-conversations button {
+  background: var(--surface);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--dimension-24px);
+  text-align: left;
+  display: flex;
+  gap: var(--dimension-17px);
+  flex-direction: column;
+  align-items: flex-start;
+}
+.app-design .team-conversations strong {
+  font-size: var(--dimension-15px);
+}
+.app-design .team-conversations button > span:last-child {
+  font-size: var(--dimension-12px);
+  color: var(--accent);
+}
+.desk-.app-design {
+  height: 100dvh;
+  overflow: hidden;
+}
+.desk-.app-design #root {
+  height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.app-design .desk-shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  z-index: 1;
+}
+.app-design .desk-header {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-22px);
+  flex: 0 0 var(--dimension-69px);
+  padding: var(--dimension-10px) var(--dimension-20px);
+  border-bottom: var(--dimension-1px) solid var(--line);
+  background: var(--surface);
+  min-width: 0;
+}
+.app-design .desk-header .brand strong {
+  font-size: var(--dimension-23px);
+}
+.app-design .desk-header .logo-mark {
+  width: var(--dimension-25px);
+  height: var(--dimension-28px);
+}
+.app-design .desk-header .brand {
+  padding-right: var(--dimension-22px);
+  border-right: var(--dimension-1px) solid var(--line);
+}
+.app-design .desk-identity {
+  min-width: 0;
+  flex: 1;
+}
+.app-design .desk-identity small {
+  display: block;
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app-design .desk-identity strong {
+  font-size: var(--dimension-14px);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: var(--dimension-3px);
+  font-weight: 500;
+}
+.app-design .desk-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-8px);
+  flex-shrink: 0;
+}
+.app-design .desk-actions .button {
+  font-size: var(--dimension-11px);
+  padding: var(--dimension-7px) var(--dimension-10px);
+}
+.app-design .save-state {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  margin-right: var(--dimension-6px);
+  max-width: var(--dimension-105px);
+}
+.app-design .wide-actions {
+  display: flex;
+  gap: var(--dimension-7px);
+}
+.app-design .compact-more {
+  display: none;
+}
+.app-design .desk-mobile-tabs {
+  display: none;
+}
+.app-design .desk-panes {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(var(--dimension-280px), 1fr) minmax(
+      var(--dimension-420px),
+      1.7fr
+    ) minmax(var(--dimension-240px), 0.85fr);
+  overflow: hidden;
+}
+.app-design .conversation-pane,
+.app-design .document-pane,
+.app-design .notes-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  background: var(--surface);
+}
+.app-design .conversation-pane {
+  border-right: var(--dimension-1px) solid var(--line);
+}
+.app-design .notes-pane {
+  border-left: var(--dimension-1px) solid var(--line);
+}
+.app-design .pane-heading {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dimension-10px);
+  padding: var(--dimension-19px) var(--dimension-20px) var(--dimension-17px);
+  border-bottom: var(--dimension-1px) solid var(--line);
+  min-height: var(--dimension-73px);
+}
+.app-design .pane-heading .eyebrow {
+  font-size: var(--dimension-9px);
+  letter-spacing: var(--dimension-1-3px);
+}
+.app-design .pane-heading h2 {
+  font-size: var(--dimension-15px);
+  font-weight: 600;
+  letter-spacing: var(--dimension---2px);
+  margin-top: var(--dimension-6px);
+}
+.app-design .pane-heading .icon-button {
+  width: var(--dimension-27px);
+  height: var(--dimension-27px);
+  border: 0;
+}
+.app-design .pane-heading .icon-button svg {
+  width: var(--dimension-16px);
+}
+.app-design .message-region {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+.app-design .messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding: var(--dimension-16px) var(--dimension-17px) var(--dimension-12px);
+  overflow-anchor: none;
+  background-image: radial-gradient(
+    var(--line) var(--dimension--7px),
+    transparent var(--dimension--7px)
+  );
+  background-size: var(--dimension-13px) var(--dimension-13px);
+}
+.app-design .conversation-date {
+  text-align: center;
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  margin: var(--dimension-2px) 0 var(--dimension-23px);
+}
+.app-design .message {
+  padding: var(--dimension-12px) var(--dimension-14px);
+  margin-bottom: var(--dimension-18px);
+  max-width: var(--dimension-97pct);
+  position: relative;
+  animation: bubble-in 0.25s ease-out;
+  overflow-wrap: anywhere;
+}
+.app-design .message.own {
+  margin-left: auto;
+  background: var(--tint);
+  border: var(--dimension-1px) solid
+    color-mix(in srgb, var(--accent) var(--dimension-12pct), transparent);
+  border-radius: var(--dimension-11px) var(--dimension-2px)
+    var(--dimension-11px) var(--dimension-11px);
+  max-width: var(--dimension-90pct);
+}
+.app-design .message.assistant {
+  background: var(--surface);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-2px) var(--dimension-11px)
+    var(--dimension-11px) var(--dimension-11px);
+}
+.app-design .message.peer {
+  background: var(--surface);
+  border: var(--dimension-1px) solid var(--line);
+  border-left: var(--dimension-3px) solid var(--source-color-45);
+  border-radius: var(--dimension-2px) var(--dimension-11px)
+    var(--dimension-11px) var(--dimension-11px);
+}
+.app-design .message-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dimension-10px);
+  margin-bottom: var(--dimension-8px);
+}
+.app-design .message-meta strong {
+  font-size: var(--dimension-11px);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-5px);
+}
+.app-design .message-meta time {
+  font-size: var(--dimension-9px);
+  color: var(--muted);
+}
+.message-.app-design {
+  font-size: var(--dimension-14px);
+  line-height: 1.85;
+}
+.app-design .tiny-brand {
+  display: inline-grid;
+  place-items: center;
+  width: var(--dimension-18px);
+  height: var(--dimension-20px);
+  border-radius: var(--dimension-4px);
+  background: var(--accent);
+  color: var(--source-color-33);
+  font-size: var(--dimension-14px);
+}
+.app-design .citation-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dimension-5px);
+  margin: var(--dimension-14px) 0 var(--dimension-3px);
+}
+.app-design .citation-links button {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-6px);
+  background: var(--bg);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-4px);
+  padding: var(--dimension-6px);
+  font-size: var(--dimension-10px);
+  text-align: left;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.app-design .citation-links b {
+  background: var(--tint);
+  color: var(--accent);
+  border-radius: var(--dimension-3px);
+  padding: var(--dimension-1px) var(--dimension-5px);
+  font-size: var(--dimension-10px);
+}
+.app-design .citation-links button:hover {
+  border-color: var(--accent);
+}
+.app-design .message-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--dimension-10px);
+  margin-top: var(--dimension-14px);
+  padding-top: var(--dimension-9px);
+  border-top: var(--dimension-1px) solid var(--line);
+  font-size: var(--dimension-9px);
+  color: var(--muted);
+}
+.app-design .message-tools button {
+  color: var(--accent);
+  font-size: var(--dimension-9px);
+  padding: 0;
+}
+.app-design .new-messages {
+  position: absolute;
+  bottom: var(--dimension-10px);
+  left: var(--dimension-50pct);
+  transform: translateX(var(--dimension--50pct));
+  background: var(--ink);
+  color: var(--surface);
+  padding: var(--dimension-7px) var(--dimension-12px);
+  border-radius: var(--dimension-20px);
+  font-size: var(--dimension-11px);
+  box-shadow: 0 var(--dimension-3px) var(--dimension-10px)
+    var(--source-color-30);
+}
+.app-design .new-messages[hidden] {
+  display: none;
+}
+.app-design .composer {
+  flex-shrink: 0;
+  padding: var(--dimension-12px) var(--dimension-15px) var(--dimension-10px);
+  border-top: var(--dimension-1px) solid var(--line);
+}
+.app-design .prompt-suggestions {
+  display: flex;
+  gap: var(--dimension-6px);
+  margin-bottom: var(--dimension-9px);
+}
+.app-design .prompt-suggestions button {
+  font-size: var(--dimension-10px);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-5px);
+  padding: var(--dimension-5px) var(--dimension-8px);
+  color: var(--muted);
+}
+.app-design .composer-box {
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-9px);
+  padding: var(--dimension-10px);
+  background: var(--surface);
+}
+.app-design .composer-box:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 var(--dimension-2px) var(--tint);
+}
+.app-design .composer-box textarea {
+  width: var(--dimension-100pct);
+  height: var(--dimension-45px);
+  border: 0;
+  outline: 0;
+  resize: none;
+  background: transparent;
+  font-size: var(--dimension-13px);
+  line-height: 1.5;
+}
+.app-design .composer-box > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-design .composer-box > div > span {
+  display: flex;
+  gap: var(--dimension-5px);
+  align-items: center;
+  font-size: var(--dimension-9px);
+  color: var(--muted);
+}
+.app-design .composer-box > div svg {
+  width: var(--dimension-12px);
+  height: var(--dimension-12px);
+}
+.app-design .composer-box > div button {
+  width: var(--dimension-29px);
+  height: var(--dimension-29px);
+  background: var(--accent);
+  color: var(--source-color-33);
+  border-radius: var(--dimension-6px);
+}
+.app-design .composer > small {
+  display: block;
+  font-size: var(--dimension-9px);
+  text-align: center;
+  color: var(--muted);
+  margin-top: var(--dimension-7px);
+}
+.app-design .source-strip {
+  padding: var(--dimension-12px) var(--dimension-14px) 0;
+  flex-shrink: 0;
+  border-bottom: var(--dimension-1px) solid var(--line);
+}
+.app-design .source-strip-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dimension-10px);
+  margin-bottom: var(--dimension-11px);
+}
+.app-design .source-strip-label > strong {
+  font-size: var(--dimension-11px);
+  font-weight: 500;
+}
+.app-design .source-strip-label > strong small {
+  font-size: var(--dimension-9px);
+  background: var(--bg);
+  border: var(--dimension-1px) solid var(--line);
+  padding: var(--dimension-1px) var(--dimension-5px);
+  margin-left: var(--dimension-4px);
+  border-radius: var(--dimension-4px);
+  color: var(--muted);
+}
+.app-design .source-filter {
+  display: flex;
+  gap: var(--dimension-4px);
+}
+.app-design .source-filter button {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  padding: var(--dimension-3px) var(--dimension-7px);
+  border-radius: var(--dimension-4px);
+}
+.app-design .source-filter button.active {
+  background: var(--tint);
+  color: var(--accent);
+}
+.app-design .source-tabs {
+  display: flex;
+  gap: var(--dimension-4px);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.app-design .source-tabs button {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-6px);
+  padding: var(--dimension-8px) var(--dimension-11px) var(--dimension-10px);
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  border: var(--dimension-1px) solid transparent;
+  border-bottom: var(--dimension-2px) solid transparent;
+  border-radius: var(--dimension-6px) var(--dimension-6px) 0 0;
+  max-width: var(--dimension-200px);
+  flex-shrink: 0;
+}
+.app-design .source-tabs button span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app-design .source-tabs button svg {
+  width: var(--dimension-13px);
+  height: var(--dimension-13px);
+}
+.app-design .source-tabs button b {
+  font-weight: 400;
+  color: var(--accent);
+}
+.app-design .source-tabs button.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+  background: var(--bg);
+}
+.app-design .preview-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dimension-8px);
+  min-height: var(--dimension-43px);
+  padding: var(--dimension-7px) var(--dimension-14px);
+  border-bottom: var(--dimension-1px) solid var(--line);
+  background: var(--surface);
+}
+.app-design .zoom-control,
+.app-design .orientation-control,
+.app-design .page-control {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-3px);
+}
+.app-design .preview-toolbar button {
+  font-size: var(--dimension-10px);
+  padding: var(--dimension-4px) var(--dimension-6px);
+  border-radius: var(--dimension-4px);
+  white-space: nowrap;
+}
+.app-design .preview-toolbar button:hover {
+  background: var(--tint);
+}
+.app-design .zoom-control button:first-child,
+.app-design .zoom-control button:last-child {
+  font-size: var(--dimension-16px);
+  line-height: 1;
+  padding: var(--dimension-3px) var(--dimension-7px);
+}
+.app-design .zoom-control #zoom-reset {
+  min-width: var(--dimension-38px);
+}
+.app-design .orientation-control {
+  border: var(--dimension-1px) solid var(--line);
+  padding: var(--dimension-2px);
+  border-radius: var(--dimension-5px);
+}
+.app-design .orientation-control button.active {
+  background: var(--tint);
+  color: var(--accent);
+}
+.app-design .page-control {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+}
+.app-design .page-control span {
+  white-space: nowrap;
+}
+.app-design .page-control button {
+  font-size: var(--dimension-17px);
+  line-height: 1;
+}
+.app-design .paper-viewport {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: var(--dimension-27px);
+  background: var(--source-color-46);
+  scrollbar-gutter: stable;
+  position: relative;
+  scroll-behavior: smooth;
+}
+.app-design .paper {
+  width: var(--dimension-100pct);
+  min-width: var(--dimension-290px);
+  max-width: var(--dimension-610px);
+  min-height: var(--dimension-690px);
+  padding: var(--dimension-42px) var(--dimension-36px);
+  background: var(--source-color-1);
+  color: var(--source-color-47);
+  box-shadow: 0 var(--dimension-4px) var(--dimension-18px)
+    var(--source-color-48);
+  margin: 0 auto;
+  zoom: var(--zoom);
+  position: relative;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.app-design .paper.landscape {
+  width: var(--dimension-760px);
+  min-width: var(--dimension-760px);
+  max-width: none;
+  min-height: var(--dimension-500px);
+  padding: var(--dimension-32px) var(--dimension-42px);
+}
+.app-design .paper.landscape p {
+  max-width: none;
+}
+.app-design .paper-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dimension-20px);
+  border-bottom: var(--dimension-1px) solid var(--source-color-49);
+  padding-bottom: var(--dimension-17px);
+  margin-bottom: var(--dimension-26px);
+  font-family: "DM Sans", sans-serif;
+}
+.app-design .paper-brand strong {
+  font-size: var(--dimension-13px);
+  letter-spacing: var(--dimension-2px);
+}
+.app-design .paper-brand span {
+  font-size: var(--dimension-8px);
+  text-align: right;
+  letter-spacing: var(--dimension--8px);
+  color: var(--source-color-50);
+}
+.app-design .paper-kicker {
+  font:
+    var(--dimension-8px)/1.5 "DM Sans",
+    sans-serif;
+  letter-spacing: var(--dimension-1-6px);
+  color: var(--source-color-51);
+}
+.app-design .paper h1 {
+  font-size: var(--dimension-32px);
+  line-height: 1.15;
+  letter-spacing: var(--dimension---8px);
+  font-weight: 400;
+  margin: var(--dimension-12px) 0 var(--dimension-24px);
+  color: var(--source-color-52);
+}
+.app-design .paper h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: var(--dimension-11px);
+  margin: var(--dimension-20px) 0 var(--dimension-14px);
+  color: var(--source-color-53);
+}
+.app-design .paper p {
+  font:
+    var(--dimension-13px)/1.95 Georgia,
+    serif;
+  color: var(--source-color-54);
+  margin: var(--dimension-14px) 0;
+  padding: var(--dimension-3px) var(--dimension-4px);
+  border-left: var(--dimension-2px) solid transparent;
+  transition: background 0.3s;
+}
+.app-design .paper .paper-rule {
+  height: var(--dimension-3px);
+  width: var(--dimension-40px);
+  background: var(--source-color-55);
+  margin-bottom: var(--dimension-15px);
+}
+.app-design .paper .cited-passage {
+  background: var(--source-color-56);
+  border-left-color: var(--source-color-57);
+  animation: citation-arrive 0.7s ease-out;
+}
+.app-design .paper .permanent-mark {
+  background: var(--source-color-58);
+  color: inherit;
+  box-shadow: 0 var(--dimension-2px) 0 var(--source-color-59);
+  padding: var(--dimension-1px) 0;
+}
+.app-design .paper-foot {
+  display: flex;
+  justify-content: space-between;
+  font:
+    var(--dimension-7px) "DM Sans",
+    sans-serif;
+  letter-spacing: var(--dimension--6px);
+  color: var(--source-color-51);
+  border-top: var(--dimension-1px) solid var(--source-color-60);
+  padding-top: var(--dimension-13px);
+  margin-top: var(--dimension-32px);
+}
+.app-design .paper-foot b {
+  font-size: var(--dimension-9px);
+  font-weight: 400;
+}
+.app-design .paper.highlight-enabled p {
+  cursor: crosshair;
+}
+.app-design .paper ::selection {
+  background: var(--source-color-61);
+}
+.app-design .preview-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--dimension-10px);
+  flex-shrink: 0;
+  min-height: var(--dimension-29px);
+  padding: var(--dimension-6px) var(--dimension-14px);
+  border-top: var(--dimension-1px) solid var(--line);
+  font-size: var(--dimension-9px);
+  color: var(--muted);
+}
+.app-design .preview-foot span {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-5px);
+}
+.app-design .citation-dot,
+.app-design .saved-dot {
+  display: inline-block;
+  width: var(--dimension-6px);
+  height: var(--dimension-6px);
+  background: var(--source-color-62);
+  border-radius: var(--dimension-1px);
+}
+.app-design .saved-dot {
+  background: var(--source-color-63);
+}
+.app-design .notes-tools {
+  display: flex;
+  gap: var(--dimension-6px);
+  padding: var(--dimension-14px) var(--dimension-15px) var(--dimension-8px);
+  flex-shrink: 0;
+}
+.app-design .notes-tools button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dimension-5px);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-5px);
+  padding: var(--dimension-6px) var(--dimension-8px);
+  font-size: var(--dimension-10px);
+  flex: 1;
+  white-space: nowrap;
+}
+.app-design .notes-tools svg {
+  width: var(--dimension-13px);
+  height: var(--dimension-13px);
+}
+.app-design .notes-tools button.active {
+  background: var(--source-color-64);
+  border-color: var(--source-color-65);
+  color: var(--source-color-66);
+}
+.app-design .highlight-hint {
+  padding: 0 var(--dimension-17px) var(--dimension-12px);
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  line-height: 1.65;
+  flex-shrink: 0;
+}
+.app-design .notes-label {
+  display: block;
+  padding: 0 var(--dimension-17px) var(--dimension-8px);
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+}
+.app-design #notes-editor {
+  display: block;
+  flex: 1;
+  min-height: var(--dimension-125px);
+  max-height: var(--dimension-45pct);
+  resize: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0 var(--dimension-17px) var(--dimension-16px);
+  font-size: var(--dimension-14px);
+  line-height: 1.9;
+  color: var(--ink);
+}
+.app-design #notes-editor::placeholder {
+  color: var(--muted);
+  opacity: 0.65;
+}
+.app-design .saved-highlights {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--dimension-80px);
+  flex: 1;
+  max-height: var(--dimension-50pct);
+  border-top: var(--dimension-1px) solid var(--line);
+}
+.app-design .highlights-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--dimension-14px) var(--dimension-17px) var(--dimension-10px);
+  font-size: var(--dimension-11px);
+  flex-shrink: 0;
+}
+.app-design .highlights-heading strong {
+  font-weight: 500;
+}
+.app-design .highlights-heading span {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+}
+.app-design #highlight-list {
+  overflow: auto;
+  min-height: 0;
+  padding: 0 var(--dimension-13px) var(--dimension-12px);
+  overscroll-behavior: contain;
+}
+.app-design .empty-highlights {
+  font-size: var(--dimension-11px);
+  line-height: 1.8;
+  color: var(--muted);
+  padding: var(--dimension-10px) var(--dimension-4px);
+}
+.app-design .highlight-card {
+  position: relative;
+  background: var(--bg);
+  border: var(--dimension-1px) solid var(--line);
+  border-left: var(--dimension-2px) solid var(--source-color-67);
+  padding: var(--dimension-10px) var(--dimension-20px) var(--dimension-10px)
+    var(--dimension-10px);
+  margin-bottom: var(--dimension-8px);
+  border-radius: 0 var(--dimension-5px) var(--dimension-5px) 0;
+}
+.app-design .highlight-card > button:first-child {
+  padding: 0;
+  text-align: left;
+}
+.app-design .highlight-card small {
+  display: block;
+  font-size: var(--dimension-9px);
+  color: var(--muted);
+  margin-bottom: var(--dimension-6px);
+}
+.app-design .highlight-card q {
+  font-size: var(--dimension-11px);
+  line-height: 1.75;
+}
+.app-design .remove-highlight {
+  position: absolute;
+  right: var(--dimension-4px);
+  top: var(--dimension-5px);
+  font-size: var(--dimension-13px);
+  color: var(--muted);
+}
+.app-design .notes-footer {
+  flex-shrink: 0;
+  border-top: var(--dimension-1px) solid var(--line);
+  padding: var(--dimension-9px) var(--dimension-15px);
+}
+.app-design .notes-footer span {
+  display: block;
+  font-size: var(--dimension-9px);
+  color: var(--muted);
+  margin-top: var(--dimension-3px);
+}
+.app-design dialog {
+  background: var(--surface);
+  color: var(--ink);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-12px);
+  box-shadow: 0 var(--dimension-20px) var(--dimension-100px)
+    var(--source-color-68);
+  max-width: var(--dimension-580px);
+  width: calc(var(--dimension-100pct) - var(--dimension-32px));
+  max-height: 85dvh;
+  overflow: auto;
+  padding: var(--dimension-26px);
+}
+.app-design dialog::backdrop {
+  background: var(--source-color-69);
+  backdrop-filter: blur(var(--dimension-5px));
+}
+.app-design dialog > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--dimension-20px);
+  margin-bottom: var(--dimension-20px);
+}
+.app-design dialog > header h2 {
+  font-size: var(--dimension-22px);
+}
+.app-design .modal-description {
+  font-size: var(--dimension-14px);
+  line-height: 1.7;
+  margin: var(--dimension-10px) 0 var(--dimension-20px);
+}
+.app-design .field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dimension-8px);
+  font-size: var(--dimension-13px);
+  margin: var(--dimension-19px) 0;
+}
+.app-design .field input,
+.app-design .field select,
+.app-design .field textarea {
+  padding: var(--dimension-11px) var(--dimension-12px);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-6px);
+  width: var(--dimension-100pct);
+  background: var(--bg);
+  font-size: var(--dimension-14px);
+}
+.app-design .field textarea {
+  min-height: var(--dimension-100px);
+  resize: vertical;
+}
+.app-design .field[hidden] {
+  display: none;
+}
+.app-design .form-error {
+  color: var(--source-color-70);
+  font-size: var(--dimension-12px);
+  line-height: 1.6;
+  margin: var(--dimension-12px) 0;
+}
+.app-design .workspace-list section {
+  margin: var(--dimension-15px) 0 var(--dimension-22px);
+}
+.app-design .workspace-list section > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--dimension-13px);
+  margin-bottom: var(--dimension-8px);
+}
+.app-design .workspace-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dimension-15px);
+  width: var(--dimension-100pct);
+  padding: var(--dimension-12px);
+  border-radius: var(--dimension-6px);
+  font-size: var(--dimension-13px);
+  text-align: left;
+}
+.app-design .workspace-option > span {
+  display: flex;
+  gap: var(--dimension-9px);
+  align-items: center;
+}
+.app-design .workspace-option small {
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.app-design .workspace-option.chosen {
+  background: var(--tint);
+  color: var(--accent);
+}
+.app-design .workspace-option svg {
+  width: var(--dimension-16px);
+}
+.app-design .action-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dimension-8px);
+}
+.app-design .action-menu button,
+.app-design .import-action {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-12px);
+  padding: var(--dimension-15px);
+  background: var(--bg);
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-7px);
+  text-align: left;
+  font-size: var(--dimension-14px);
+  cursor: pointer;
+}
+.app-design .action-menu button:hover,
+.app-design .import-action:hover {
+  border-color: var(--accent);
+}
+.app-design .import-action {
+  position: relative;
+  overflow: hidden;
+}
+.app-design .import-action input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.app-design .upload-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--dimension-16px);
+  padding: var(--dimension-30px);
+  border: var(--dimension-1px) dashed var(--line);
+  border-radius: var(--dimension-9px);
+  background: var(--bg);
+  margin: var(--dimension-20px) 0;
+  font-size: var(--dimension-14px);
+}
+.app-design .upload-picker > svg {
+  width: var(--dimension-30px);
+  height: var(--dimension-30px);
+  color: var(--accent);
+  animation: upload-bob 4s ease-in-out infinite;
+}
+.app-design .upload-picker input {
+  font-size: var(--dimension-12px);
+  max-width: var(--dimension-100pct);
+}
+.app-design .people > div {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-10px);
+  padding: var(--dimension-12px) 0;
+  border-bottom: var(--dimension-1px) solid var(--line);
+}
+.app-design .people > div > span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+.app-design .people strong {
+  font-size: var(--dimension-13px);
+  display: block;
+  overflow-wrap: anywhere;
+}
+.app-design .people small {
+  display: block;
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.app-design .simulation-button {
+  margin-top: var(--dimension-20px);
+}
+.app-design .access-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--dimension-8px);
+  margin: var(--dimension-20px) 0 var(--dimension-24px);
+}
+.app-design .access-options button {
+  border: var(--dimension-1px) solid var(--line);
+  border-radius: var(--dimension-7px);
+  padding: var(--dimension-15px) var(--dimension-6px);
+  background: var(--surface);
+}
+.app-design .access-options button.active {
+  background: var(--tint);
+  border-color: var(--accent);
+}
+.app-design .access-options strong {
+  display: block;
+  font-size: var(--dimension-13px);
+}
+.app-design .access-options small {
+  display: block;
+  font-size: var(--dimension-10px);
+  color: var(--muted);
+  margin-top: var(--dimension-5px);
+}
+.app-design .email-preview {
+  border: var(--dimension-1px) solid var(--line);
+  padding: var(--dimension-20px);
+  margin: var(--dimension-15px) 0 var(--dimension-20px);
+}
+.app-design .email-preview small {
+  display: block;
+  margin: var(--dimension-12px) 0 var(--dimension-5px);
+  font-size: var(--dimension-9px);
+  letter-spacing: var(--dimension-1px);
+  color: var(--muted);
+}
+.app-design .email-preview strong {
+  font-size: var(--dimension-14px);
+  display: block;
+}
+.app-design .email-preview hr {
+  border: 0;
+  border-top: var(--dimension-1px) solid var(--line);
+  margin: var(--dimension-20px) 0;
+}
+.app-design .email-preview p {
+  font-size: var(--dimension-14px);
+  line-height: 1.8;
+}
+.app-design .tour-slide {
+  background: var(--bg);
+  border: var(--dimension-1px) solid var(--line);
+  padding: var(--dimension-30px);
+  margin: var(--dimension-15px) 0 var(--dimension-20px);
+}
+.app-design .tour-slide > span {
+  font-size: var(--dimension-11px);
+  color: var(--accent);
+  letter-spacing: var(--dimension-1px);
+}
+.app-design .tour-slide h2 {
+  font-size: var(--dimension-27px);
+  letter-spacing: var(--dimension--1px);
+  margin: var(--dimension-20px) 0 var(--dimension-14px);
+}
+.app-design .tour-slide p {
+  font-size: var(--dimension-14px);
+  line-height: 1.7;
+}
+.app-design .tour-progress {
+  display: flex;
+  gap: var(--dimension-5px);
+  margin-top: var(--dimension-25px);
+}
+.app-design .tour-progress i {
+  height: var(--dimension-3px);
+  flex: 1;
+  background: var(--line);
+}
+.app-design .tour-progress i.active {
+  background: var(--accent);
+}
+.app-design #toast {
+  position: fixed;
+  bottom: var(--dimension-23px);
+  left: var(--dimension-50pct);
+  transform: translate(var(--dimension--50pct), var(--dimension-10px));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--surface);
+  font-size: var(--dimension-13px);
+  line-height: 1.5;
+  padding: var(--dimension-12px) var(--dimension-19px);
+  max-width: min(var(--dimension-650px), 90vw);
+  border-radius: var(--dimension-7px);
+  box-shadow: 0 var(--dimension-4px) var(--dimension-20px)
+    var(--source-color-30);
+  transition: 0.2s;
+  text-align: center;
+}
+.app-design #toast.show {
+  opacity: 1;
+  transform: translate(var(--dimension--50pct), 0);
+}
+.app-design .guest-shell {
+  position: relative;
+  z-index: 2;
+  max-width: var(--dimension-850px);
+  margin: auto;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--dimension-25px);
+}
+.app-design .guest-shell > header {
+  display: flex;
+  gap: var(--dimension-20px);
+  align-items: center;
+  padding: var(--dimension-20px) 0;
+  border-bottom: var(--dimension-1px) solid var(--line);
+}
+.app-design .guest-shell > header > span {
+  font-size: var(--dimension-12px);
+  color: var(--muted);
+  flex: 1;
+}
+.app-design .guest-title {
+  padding: var(--dimension-25px) 0 var(--dimension-18px);
+}
+.app-design .guest-title h1 {
+  font-size: var(--dimension-28px);
+  margin-top: var(--dimension-10px);
+}
+.app-design .guest-content {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: var(--dimension-15px) 0;
+}
+.app-design .guest-content pre {
+  font:
+    var(--dimension-15px)/1.9 "DM Sans",
+    sans-serif;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.app-design .guest-content .message {
+  max-width: var(--dimension-85pct);
+}
+.app-design .guest-lock {
+  margin: auto;
+  text-align: center;
+  padding: var(--dimension-50px) 0;
+}
+.app-design .guest-lock p {
+  margin-top: var(--dimension-15px);
+  font-size: var(--dimension-14px);
+}
+.app-design .guest-shell > footer {
+  text-align: center;
+  padding: var(--dimension-20px) 0;
+  border-top: var(--dimension-1px) solid var(--line);
+}
+.app-design .guest-shell > footer p {
+  font-size: var(--dimension-11px);
+  margin-top: var(--dimension-10px);
+}
+.app-design .library-shell {
+  display: block;
+  padding: 0 var(--dimension-34px);
+  max-width: var(--dimension-1620px);
+  margin: auto;
+}
+.app-design .library-nav {
+  flex-direction: row;
+  align-items: center;
+  padding: var(--dimension-16px) 0;
+  gap: var(--dimension-28px);
+  border-right: 0;
+  border-bottom: var(--dimension-2px) solid var(--ink);
+  background: transparent;
+  height: var(--dimension-73px);
+}
+.app-design .library-nav > .brand {
+  margin: 0;
+}
+.app-design .logo-mark {
+  border-radius: 0;
+}
+.app-design .workspace-button {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  max-width: var(--dimension-240px);
+  padding: var(--dimension-5px);
+  gap: var(--dimension-9px);
+}
+.app-design .workspace-avatar {
+  display: none;
+}
+.app-design .workspace-button strong {
+  font-size: var(--dimension-12px);
+}
+.app-design .library-nav nav {
+  flex-direction: row;
+  gap: var(--dimension-14px);
+}
+.app-design .library-nav nav button {
+  border-radius: 0;
+  padding: var(--dimension-8px) var(--dimension-13px);
+  color: var(--ink);
+  font-size: var(--dimension-12px);
+}
+.app-design .library-nav nav button.active {
+  background: var(--accent);
+  color: var(--source-color-33);
+  box-shadow: none;
+}
+.app-design .library-nav nav svg {
+  display: none;
+}
+.app-design .nav-bottom {
+  margin: 0;
+}
+.app-design .nav-bottom > div {
+  display: none;
+}
+.app-design .library-top {
+  height: var(--dimension-47px);
+  padding: 0;
+  background: transparent;
+  border-bottom: var(--dimension-1px) solid var(--line);
+}
+.app-design .library-content {
+  padding: var(--dimension-35px) 0 var(--dimension-20px);
+}
+.app-design .library-title h1 {
+  font-size: var(--dimension-64px);
+  font-weight: 800;
+  letter-spacing: var(--dimension--3-8px);
+  margin: var(--dimension-8px) 0 var(--dimension-12px);
+}
+.app-design .library-title .eyebrow {
+  color: var(--accent);
+  font-size: var(--dimension-10px);
+  letter-spacing: var(--dimension-1px);
+}
+.app-design .library-title p {
+  font-size: var(--dimension-13px);
+}
+.app-design .workspace-summary {
+  border-top: var(--dimension-3px) solid var(--ink);
+  border-bottom: var(--dimension-1px) solid var(--ink);
+  padding: var(--dimension-15px) 0 var(--dimension-16px);
+  gap: var(--dimension-40px);
+  position: relative;
+}
+.app-design .workspace-summary:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--dimension--11px);
+  height: var(--dimension-6px);
+  background: linear-gradient(
+    90deg,
+    var(--source-color-71) 0 var(--dimension-12-5pct),
+    var(--source-color-72) var(--dimension-12-5pct) var(--dimension-25pct),
+    var(--source-color-73) var(--dimension-25pct) var(--dimension-37-5pct),
+    var(--source-color-74) var(--dimension-37-5pct) var(--dimension-50pct),
+    var(--source-color-75) var(--dimension-50pct) var(--dimension-62-5pct),
+    var(--source-color-76) var(--dimension-62-5pct) var(--dimension-75pct),
+    var(--source-color-77) var(--dimension-75pct) var(--dimension-87-5pct),
+    var(--source-color-78) var(--dimension-87-5pct)
+  );
+}
+.app-design .workspace-summary strong {
+  font-size: var(--dimension-31px);
+  font-weight: 700;
+  letter-spacing: var(--dimension--1-5px);
+}
+.app-design .summary-label {
+  color: var(--ink);
+}
+.app-design .finder {
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
+}
+.app-design .finder-toolbar {
+  background: var(--bg);
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: var(--dimension-2px) solid var(--ink);
+}
+.app-design .search,
+.app-design .view-switch {
+  border-radius: 0;
+  background: var(--surface);
+}
+.app-design .view-switch button {
+  border-radius: 0;
+}
+.app-design .view-switch button.active {
+  background: var(--ink);
+  color: var(--surface);
+  box-shadow: none;
+}
+.app-design .file-symbol {
+  border-radius: 0;
+}
+.app-design .file-collection.grid .file-row {
+  border: 0;
+  background: var(--bg);
+  border-bottom: var(--dimension-2px) solid var(--ink);
+}
+.app-design .file-collection.grid {
+  padding: var(--dimension-18px) 0;
+  gap: var(--dimension-18px);
+}
+.app-design .library-caption {
+  font-size: var(--dimension-9px);
+}
+.app-design .overview-content {
+  padding: var(--dimension-35px) 0;
+}
+.app-design .overview-hero h1 {
+  font-size: var(--dimension-71px);
+  font-weight: 800;
+  letter-spacing: var(--dimension--4px);
+}
+.app-design .editorial-sample {
+  border: 0;
+  background: var(--ink);
+  color: var(--surface);
+  box-shadow: var(--dimension-12px) var(--dimension-12px) 0 var(--accent);
+  padding: var(--dimension-32px);
+}
+.app-design .editorial-sample h2 {
+  font-size: var(--dimension-41px);
+  font-weight: 700;
+  letter-spacing: var(--dimension--1-5px);
+}
+.app-design .sample-top {
+  border-color: var(--source-color-79);
+}
+.app-design .sample-source {
+  border-color: var(--source-color-79);
+}
+.app-design .sample-source mark {
+  background: var(--accent);
+  color: var(--source-color-33);
+}
+.app-design .sample-answer strong {
+  color: var(--source-color-80);
+}
+.app-design .editorial-sample .text-button {
+  color: var(--source-color-74);
+}
+.app-design .workflow-strip {
+  border-top: var(--dimension-3px) solid var(--ink);
+  border-bottom: var(--dimension-1px) solid var(--ink);
+}
+.app-design .workflow-strip h3 {
+  font-size: var(--dimension-28px);
+  letter-spacing: var(--dimension--1px);
+}
+.app-design .faq h2 {
+  font-size: var(--dimension-37px);
+  letter-spacing: var(--dimension--1-5px);
+}
+.app-design .desk-header {
+  border-bottom: var(--dimension-2px) solid var(--ink);
+}
+.app-design .pane-heading {
+  border-bottom: var(--dimension-1px) solid var(--ink);
+}
+.app-design .source-tabs button {
+  border-radius: 0;
+}
+.app-design .orientation-control {
+  border-radius: 0;
+}
+.app-design[data-mode="dark"] {
+  --bg: var(--source-color-81);
+  --surface: var(--source-color-82);
+  --ink: var(--source-color-83);
+  --muted: var(--source-color-84);
+  --line: var(--source-color-85);
+  --accent: var(--source-color-86);
+  --tint: var(--source-color-87);
+  color-scheme: dark;
+}
+.app-design[data-mode="dark"] .button.primary {
+  color: var(--source-color-88);
+}
+[data-theme="dark"] .app-design .button.primary {
+  color: var(--source-color-89);
+}
+[data-theme="dark"] .app-design .editorial-sample {
+  background: var(--source-color-90);
+  color: var(--source-color-91);
+}
+[data-theme="dark"] .app-design .sample-top,
+[data-theme="dark"] .app-design .sample-source {
+  border-color: var(--source-color-92);
+}
+[data-theme="dark"] .app-design .sample-answer strong {
+  color: var(--source-color-93);
+}
+.app-design[data-mode="dark"] .paper-viewport {
+  background: var(--source-color-94);
+}
+.app-design[data-mode="dark"] .status.ready {
+  color: var(--source-color-95);
+}
+.app-design[data-mode="dark"] .paper {
+  color-scheme: light;
+}
+.app-design[data-mode="dark"] .notes-tools button.active {
+  background: var(--source-color-96);
+  color: var(--source-color-97);
+  border-color: var(--source-color-98);
+}
+.app-design .art-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.app-design .art-background > i {
+  position: absolute;
+  display: block;
+  filter: blur(var(--dimension-60px));
+  opacity: 0.25;
+  border-radius: var(--dimension-50pct);
+  width: var(--dimension-650px);
+  height: var(--dimension-600px);
+  background: var(--accent);
+  animation: ambient-a 19s ease-in-out infinite alternate;
+  right: var(--dimension--200px);
+  top: var(--dimension--80px);
+}
+.app-design .art-background > i:nth-child(2) {
+  background: var(--source-color-99);
+  width: var(--dimension-500px);
+  height: var(--dimension-600px);
+  left: var(--dimension-5pct);
+  top: var(--dimension-30pct);
+  opacity: 0.17;
+  animation: ambient-b 23s ease-in-out infinite alternate;
+}
+.app-design .art-background > i:nth-child(3) {
+  background: var(--tint);
+  width: var(--dimension-750px);
+  height: var(--dimension-600px);
+  right: var(--dimension-15pct);
+  bottom: var(--dimension--250px);
+  opacity: 0.6;
+  animation: ambient-b 17s ease-in-out infinite alternate-reverse;
+}
+.app-design .grid-lines {
+  position: absolute;
+  inset: var(--dimension--60px);
+  opacity: 0.13;
+  background-image:
+    linear-gradient(
+      var(--muted) var(--dimension-1px),
+      transparent var(--dimension-1px)
+    ),
+    linear-gradient(
+      90deg,
+      var(--muted) var(--dimension-1px),
+      transparent var(--dimension-1px)
+    );
+  background-size: var(--dimension-55px) var(--dimension-55px);
+  animation: grid-drift 28s linear infinite;
+}
+.app-design .art-background > i {
+  border-radius: 0;
+  filter: none;
+  width: 30vw;
+  height: 70vh;
+  background: repeating-linear-gradient(
+    120deg,
+    transparent 0 var(--dimension-14px),
+    var(--accent) var(--dimension-14px) var(--dimension-15px)
+  );
+  opacity: 0.045;
+  transform: rotate(10deg);
+}
+.app-design .art-background > i:nth-child(2) {
+  display: none;
+}
+.app-design .grid-lines {
+  opacity: 0.08;
+  background-size: var(--dimension-90px) var(--dimension-90px);
+}
+.desk-.app-design .art-background {
+  opacity: 0.25;
+}
+.app-design .file-row {
+  animation: row-in 0.4s both;
+}
+.app-design .file-row:nth-child(2) {
+  animation-delay: 0.04s;
+}
+.app-design .file-row:nth-child(3) {
+  animation-delay: 0.08s;
+}
+.app-design .file-row:nth-child(4) {
+  animation-delay: 0.12s;
+}
+.app-design .file-row:nth-child(5) {
+  animation-delay: 0.16s;
+}
+.app-design .file-row:nth-child(6) {
+  animation-delay: 0.2s;
+}
+.app-design .editorial-sample {
+  animation: sample-float 7s ease-in-out infinite;
+}
+.app-design .workspace-summary {
+  animation: page-in 0.5s ease-out;
+}
+.app-design .permanent-mark {
+  animation: highlight-arrive 0.35s ease-out;
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--dimension-10px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes row-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--dimension-7px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ambient-a {
+  to {
+    transform: translate(var(--dimension--45pct), var(--dimension-30pct))
+      rotate(15deg);
+  }
+}
+@keyframes ambient-b {
+  to {
+    transform: translate(var(--dimension-45pct), var(--dimension--30pct));
+  }
+}
+@keyframes grid-drift {
+  to {
+    transform: translate(var(--dimension-55px), var(--dimension-55px));
+  }
+}
+@keyframes sample-float {
+  50% {
+    transform: translateY(var(--dimension--7px));
+  }
+}
+@keyframes upload-bob {
+  50% {
+    transform: translateY(var(--dimension--5px));
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes citation-arrive {
+  from {
+    background: var(--source-color-100);
+  }
+  to {
+    background: var(--source-color-56);
+  }
+}
+@keyframes highlight-arrive {
+  from {
+    background: var(--source-color-101);
+  }
+  to {
+    background: var(--source-color-58);
+  }
+}
+@media (min-width: 1600px) {
+  .app-design .desk-panes {
+    grid-template-columns: minmax(var(--dimension-340px), 1fr) minmax(
+        var(--dimension-550px),
+        1.9fr
+      ) minmax(var(--dimension-290px), 0.85fr);
+  }
+  .message-.app-design {
+    font-size: var(--dimension-15px);
+  }
+  .app-design .paper {
+    padding: var(--dimension-50px) var(--dimension-48px);
+  }
+  .app-design .paper p {
+    font-size: var(--dimension-14px);
+  }
+  .app-design .paper h1 {
+    font-size: var(--dimension-37px);
+  }
+  .app-design .notes-tools button {
+    font-size: var(--dimension-11px);
+  }
+  .app-design .pane-heading h2 {
+    font-size: var(--dimension-17px);
+  }
+  .app-design .desk-actions .button {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .library-content {
+    padding-top: var(--dimension-48px);
+  }
+  .app-design .library-title h1 {
+    font-size: var(--dimension-41px);
+  }
+  .app-design .file-collection.list .file-row {
+    min-height: var(--dimension-74px);
+  }
+}
+@media (max-width: 1250px) {
+  .app-design .library-content {
+    padding: var(--dimension-30px) var(--dimension-25px);
+  }
+  .app-design .library-title h1 {
+    font-size: var(--dimension-30px);
+  }
+  .app-design .title-actions .button {
+    font-size: var(--dimension-11px);
+    padding: var(--dimension-8px) var(--dimension-10px);
+  }
+  .app-design .workspace-summary {
+    gap: var(--dimension-20px);
+  }
+  .app-design .workspace-summary p {
+    display: none;
+  }
+  .app-design .workspace-summary .text-button {
+    margin-left: auto;
+  }
+  .app-design .library-top {
+    padding: 0 var(--dimension-25px);
+  }
+  .app-design .file-collection.list .file-head,
+  .app-design .file-collection.list .file-row {
+    grid-template-columns: var(--dimension-20px) minmax(
+        var(--dimension-140px),
+        1fr
+      ) var(--dimension-95px) var(--dimension-75px) var(--dimension-115px);
+    gap: var(--dimension-8px);
+    padding-left: var(--dimension-14px);
+    padding-right: var(--dimension-14px);
+  }
+  .app-design .overview-hero {
+    gap: var(--dimension-40px);
+  }
+  .app-design .overview-hero h1 {
+    font-size: var(--dimension-47px);
+  }
+  .app-design .desk-header {
+    gap: var(--dimension-15px);
+    padding: var(--dimension-10px) var(--dimension-15px);
+  }
+  .app-design .desk-header .brand {
+    padding-right: var(--dimension-15px);
+  }
+  .app-design .desk-header .brand strong {
+    font-size: var(--dimension-20px);
+  }
+  .app-design .save-state {
+    display: none;
+  }
+  .app-design .desk-panes {
+    grid-template-columns: var(--dimension-290px) minmax(
+        var(--dimension-350px),
+        1fr
+      ) var(--dimension-245px);
+  }
+  .app-design .paper-viewport {
+    padding: var(--dimension-19px);
+  }
+  .app-design .paper {
+    padding: var(--dimension-30px) var(--dimension-26px);
+  }
+  .app-design .paper h1 {
+    font-size: var(--dimension-27px);
+  }
+  .app-design .paper p {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .preview-toolbar {
+    padding: var(--dimension-6px) var(--dimension-9px);
+    gap: var(--dimension-3px);
+  }
+  .app-design .preview-toolbar button {
+    padding: var(--dimension-3px) var(--dimension-4px);
+    font-size: var(--dimension-9px);
+  }
+  .app-design .pane-heading {
+    padding-left: var(--dimension-15px);
+    padding-right: var(--dimension-15px);
+  }
+  .app-design .notes-tools {
+    padding-left: var(--dimension-10px);
+    padding-right: var(--dimension-10px);
+    gap: var(--dimension-4px);
+  }
+  .app-design .notes-tools button {
+    padding: var(--dimension-6px);
+    font-size: var(--dimension-9px);
+  }
+  .app-design .overview-content {
+    padding: var(--dimension-30px);
+  }
+  .app-design .overview-hero h1 {
+    font-size: var(--dimension-61px);
+  }
+}
+@media (max-width: 1050px) {
+  .app-design .desk-panes {
+    grid-template-columns: var(--dimension-320px) minmax(0, 1fr);
+  }
+  .app-design .desk-mobile-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--dimension-4px);
+    background: var(--surface);
+    border-bottom: var(--dimension-1px) solid var(--line);
+    padding: var(--dimension-5px);
+    flex-shrink: 0;
+  }
+  .app-design .desk-mobile-tabs button {
+    display: flex;
+    align-items: center;
+    gap: var(--dimension-5px);
+    padding: var(--dimension-5px) var(--dimension-15px);
+    font-size: var(--dimension-11px);
+    border-radius: var(--dimension-4px);
+    color: var(--muted);
+  }
+  .app-design .desk-mobile-tabs svg {
+    width: var(--dimension-13px);
+    height: var(--dimension-13px);
+  }
+  .app-design .desk-mobile-tabs button.active {
+    background: var(--tint);
+    color: var(--accent);
+  }
+  .app-design .desk-panes .notes-pane {
+    display: none;
+  }
+  .app-design .desk-panes[data-pane="notes"] .notes-pane {
+    display: flex;
+  }
+  .app-design .desk-panes[data-pane="notes"] .conversation-pane {
+    display: none;
+  }
+  .app-design .desk-panes[data-pane="notes"] {
+    grid-template-columns: minmax(0, 1fr) var(--dimension-300px);
+  }
+  .app-design .wide-actions {
+    display: none;
+  }
+  .app-design .compact-more {
+    display: inline-flex;
+  }
+  .app-design .paper p {
+    font-size: var(--dimension-13px);
+  }
+  .app-design .paper h1 {
+    font-size: var(--dimension-30px);
+  }
+  .app-design .file-collection.grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .app-design .library-shell {
+    grid-template-columns: var(--dimension-170px) minmax(0, 1fr);
+  }
+  .app-design .library-nav {
+    padding: var(--dimension-22px) var(--dimension-10px);
+  }
+  .app-design .library-nav > .brand {
+    margin-left: var(--dimension-6px);
+  }
+  .app-design .library-title {
+    align-items: flex-start;
+  }
+  .app-design .library-title p {
+    max-width: var(--dimension-350px);
+    line-height: 1.6;
+  }
+  .app-design .library-title h1 {
+    font-size: var(--dimension-29px);
+  }
+  .app-design .finder-toolbar {
+    flex-wrap: wrap;
+  }
+  .app-design .finder-controls {
+    margin-left: auto;
+  }
+  .app-design .file-collection.list .file-meta {
+    display: none;
+  }
+  .app-design .file-collection.list .file-head,
+  .app-design .file-collection.list .file-row {
+    grid-template-columns: var(--dimension-20px) minmax(
+        var(--dimension-160px),
+        1fr
+      ) var(--dimension-70px) var(--dimension-110px);
+  }
+  .app-design .file-collection.list .file-head > span:nth-child(3) {
+    display: none;
+  }
+  .app-design .overview-hero {
+    grid-template-columns: 1fr;
+    max-width: var(--dimension-750px);
+    gap: var(--dimension-35px);
+  }
+  .app-design .overview-hero h1 {
+    font-size: var(--dimension-53px);
+  }
+  .app-design .overview-hero p {
+    max-width: var(--dimension-550px);
+  }
+  .app-design .editorial-sample {
+    max-width: var(--dimension-600px);
+    width: var(--dimension-100pct);
+  }
+  .app-design .faq {
+    grid-template-columns: 1fr;
+    gap: var(--dimension-22px);
+  }
+  .app-design .workflow-strip {
+    gap: var(--dimension-20px);
+  }
+  .app-design .team-conversations {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .app-design .desk-header .brand strong {
+    display: none;
+  }
+  .app-design .desk-header .brand {
+    border: 0;
+    padding: 0;
+  }
+  .app-design .library-shell {
+    padding: 0 var(--dimension-24px);
+  }
+  .app-design .library-title h1 {
+    font-size: var(--dimension-54px);
+  }
+  .app-design .library-nav {
+    gap: var(--dimension-20px);
+  }
+  .app-design .library-nav nav {
+    gap: var(--dimension-3px);
+  }
+}
+@media (max-width: 760px) {
+  .app-design .library-shell,
+  .app-design .library-shell {
+    display: block;
+    padding: 0;
+  }
+  .app-design .library-nav,
+  .app-design .library-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--dimension-12px);
+    padding: var(--dimension-13px) var(--dimension-16px);
+    border-radius: 0;
+    height: auto;
+    border: 0;
+    border-bottom: var(--dimension-1px) solid var(--line);
+  }
+  .app-design .library-nav > .brand {
+    margin: 0;
+  }
+  .app-design .library-nav .brand strong {
+    display: inline;
+    font-size: var(--dimension-23px);
+  }
+  .app-design .workspace-button,
+  .app-design .workspace-button {
+    margin-left: auto;
+    width: var(--dimension-190px);
+    padding: var(--dimension-6px);
+  }
+  .app-design .workspace-button > span:nth-child(2) {
+    display: block;
+  }
+  .app-design .workspace-avatar {
+    width: var(--dimension-25px);
+    height: var(--dimension-27px);
+  }
+  .app-design .workspace-button small {
+    font-size: var(--dimension-9px);
+  }
+  .app-design .workspace-button strong,
+  .app-design .workspace-button strong {
+    font-size: var(--dimension-10px);
+  }
+  .app-design .library-nav nav,
+  .app-design .library-nav nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--dimension-10px);
+    width: var(--dimension-100pct);
+  }
+  .app-design .library-nav nav button,
+  .app-design .library-nav nav button {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--dimension-7px);
+    padding: var(--dimension-6px) var(--dimension-15px);
+    font-size: var(--dimension-12px);
+  }
+  .app-design .library-nav nav button svg {
+    width: var(--dimension-15px);
+    height: var(--dimension-15px);
+  }
+  .app-design .nav-bottom,
+  .app-design .nav-bottom {
+    display: none;
+  }
+  .app-design .library-top,
+  .app-design .library-top {
+    height: var(--dimension-49px);
+    padding: 0 var(--dimension-16px);
+  }
+  .app-design .library-top > div:first-child {
+    font-size: var(--dimension-10px);
+    gap: var(--dimension-6px);
+  }
+  .app-design .library-top > div:first-child span,
+  .app-design .library-top > div:first-child b {
+    display: none;
+  }
+  .app-design .toolbar-actions {
+    gap: var(--dimension-6px);
+  }
+  .app-design .toolbar-actions .button span {
+    display: none;
+  }
+  .app-design .toolbar-actions .button {
+    padding: var(--dimension-7px);
+  }
+  .app-design .library-content,
+  .app-design .library-content {
+    padding: var(--dimension-24px) var(--dimension-16px);
+  }
+  .app-design .library-title {
+    display: block;
+    margin-bottom: var(--dimension-26px);
+  }
+  .app-design .library-title h1 {
+    font-size: var(--dimension-33px);
+    letter-spacing: var(--dimension--1-3px);
+  }
+  .app-design .library-title h1 {
+    font-size: var(--dimension-46px);
+    letter-spacing: var(--dimension--2-8px);
+  }
+  .app-design .library-title p {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .title-actions {
+    margin-top: var(--dimension-18px);
+  }
+  .app-design .title-actions .button {
+    font-size: var(--dimension-12px);
+    padding: var(--dimension-8px) var(--dimension-12px);
+  }
+  .app-design .workspace-summary,
+  .app-design .workspace-summary {
+    gap: var(--dimension-18px);
+    padding: var(--dimension-17px) var(--dimension-14px);
+    margin-bottom: var(--dimension-25px);
+  }
+  .app-design .workspace-summary .summary-label {
+    font-size: var(--dimension-8px);
+    max-width: var(--dimension-55px);
+  }
+  .app-design .workspace-summary strong,
+  .app-design .workspace-summary strong {
+    font-size: var(--dimension-25px);
+  }
+  .app-design .workspace-summary strong span {
+    display: block;
+    font-size: var(--dimension-10px);
+  }
+  .app-design .workspace-summary .text-button {
+    font-size: var(--dimension-10px);
+    max-width: var(--dimension-90px);
+    text-align: left;
+  }
+  .app-design .finder-toolbar {
+    padding: var(--dimension-12px);
+  }
+  .app-design .finder-controls {
+    width: var(--dimension-100pct);
+    justify-content: space-between;
+    margin: 0;
+  }
+  .app-design .search {
+    flex: 1;
+  }
+  .app-design .search input {
+    width: var(--dimension-100pct);
+  }
+  .app-design .selection-bar {
+    padding: var(--dimension-8px) var(--dimension-12px);
+    gap: var(--dimension-10px);
+    flex-wrap: wrap;
+  }
+  .app-design .selection-bar > div {
+    gap: var(--dimension-12px);
+  }
+  .app-design .selection-bar .text-button {
+    font-size: var(--dimension-10px);
+  }
+  .app-design .selection-bar.has-selection > div {
+    width: var(--dimension-100pct);
+    justify-content: space-between;
+  }
+  .app-design .selection-bar .muted {
+    font-size: var(--dimension-9px);
+  }
+  .app-design .file-collection.list .file-head {
+    display: none;
+  }
+  .app-design .file-collection.list .file-row {
+    grid-template-columns: var(--dimension-17px) minmax(0, 1fr) var(
+        --dimension-85px
+      );
+    gap: var(--dimension-8px);
+    padding: var(--dimension-10px) var(--dimension-11px);
+    min-height: var(--dimension-76px);
+  }
+  .app-design .file-collection.list .file-row .status {
+    display: none;
+  }
+  .app-design .file-name {
+    gap: var(--dimension-9px);
+  }
+  .app-design .file-name strong {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .file-name small {
+    font-size: var(--dimension-9px);
+  }
+  .app-design .file-symbol {
+    width: var(--dimension-27px);
+    height: var(--dimension-34px);
+  }
+  .app-design .row-action {
+    font-size: var(--dimension-10px);
+  }
+  .app-design .file-collection.grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--dimension-9px);
+    padding: var(--dimension-12px);
+  }
+  .app-design .file-collection.grid .file-row {
+    padding: var(--dimension-13px);
+    min-height: var(--dimension-180px);
+  }
+  .app-design .file-collection.grid .file-name strong {
+    font-size: var(--dimension-11px);
+  }
+  .app-design .file-collection.grid .file-meta {
+    flex-basis: var(--dimension-100pct);
+    font-size: var(--dimension-9px);
+  }
+  .app-design .file-collection.grid .status {
+    font-size: var(--dimension-9px);
+  }
+  .app-design .finder-footer {
+    padding: var(--dimension-10px) var(--dimension-12px);
+    font-size: var(--dimension-9px);
+  }
+  .app-design .finder-footer > span:last-child {
+    max-width: var(--dimension-155px);
+    text-align: right;
+  }
+  .app-design .library-caption > span {
+    max-width: var(--dimension-170px);
+    font-size: var(--dimension-8px);
+  }
+  .app-design .library-caption .text-button {
+    font-size: var(--dimension-10px);
+  }
+  .app-design .overview-content,
+  .app-design .overview-content {
+    padding: var(--dimension-24px) var(--dimension-20px);
+  }
+  .app-design .overview-hero h1 {
+    font-size: var(--dimension-43px);
+    letter-spacing: var(--dimension--2px);
+  }
+  .app-design .overview-hero h1 {
+    font-size: var(--dimension-49px);
+    letter-spacing: var(--dimension--2-6px);
+  }
+  .app-design .overview-hero {
+    padding: var(--dimension-15px) 0 var(--dimension-25px);
+  }
+  .app-design .overview-hero p {
+    font-size: var(--dimension-14px);
+  }
+  .app-design .editorial-sample {
+    padding: var(--dimension-24px);
+  }
+  .app-design .workflow-strip {
+    grid-template-columns: 1fr;
+    gap: var(--dimension-25px);
+    padding: var(--dimension-25px) 0;
+  }
+  .app-design .workflow-strip h3 {
+    font-size: var(--dimension-23px);
+    margin-top: var(--dimension-8px);
+  }
+  .app-design .workflow-strip > div {
+    border-bottom: var(--dimension-1px) solid var(--line);
+    padding-bottom: var(--dimension-20px);
+  }
+  .app-design .workflow-strip > div:last-child {
+    border: 0;
+    padding: 0;
+  }
+  .app-design .faq h2,
+  .app-design .faq h2 {
+    font-size: var(--dimension-30px);
+  }
+  .app-design .team-introduction {
+    display: block;
+    padding: var(--dimension-22px);
+  }
+  .app-design .team-introduction .avatars {
+    margin-bottom: var(--dimension-20px);
+  }
+  .app-design .team-conversations {
+    grid-template-columns: 1fr;
+  }
+  .app-design .desk-header {
+    padding: var(--dimension-9px) var(--dimension-12px);
+    gap: var(--dimension-9px);
+    flex-basis: var(--dimension-62px);
+  }
+  .app-design .desk-header .logo-mark {
+    width: var(--dimension-23px);
+    height: var(--dimension-26px);
+  }
+  .app-design .desk-identity strong {
+    font-size: var(--dimension-12px);
+    max-width: var(--dimension-200px);
+  }
+  .app-design .desk-identity small {
+    font-size: var(--dimension-9px);
+  }
+  .app-design .desk-actions {
+    gap: var(--dimension-5px);
+  }
+  .app-design .desk-actions .button {
+    padding: var(--dimension-6px);
+    font-size: var(--dimension-10px);
+  }
+  .app-design .desk-actions .button > span {
+    display: none;
+  }
+  .app-design .desk-actions #save-changes {
+    width: var(--dimension-31px);
+    height: var(--dimension-31px);
+    padding: var(--dimension-6px);
+    overflow: hidden;
+  }
+  .app-design .desk-actions .compact-more {
+    font-size: 0;
+    width: var(--dimension-30px);
+    height: var(--dimension-31px);
+    gap: 0;
+  }
+  .app-design .desk-actions .appearance {
+    width: var(--dimension-29px);
+    height: var(--dimension-31px);
+  }
+  .app-design .desk-mobile-tabs {
+    padding: var(--dimension-4px);
+    gap: var(--dimension-10px);
+  }
+  .app-design .desk-mobile-tabs button {
+    font-size: var(--dimension-11px);
+    padding: var(--dimension-5px) var(--dimension-15px);
+  }
+  .app-design .desk-panes,
+  .app-design .desk-panes[data-pane="notes"] {
+    display: flex;
+    padding: 0;
+    gap: 0;
+    flex: 1;
+  }
+  .app-design .desk-panes > .conversation-pane,
+  .app-design .desk-panes > .document-pane,
+  .app-design .desk-panes > .notes-pane {
+    display: none !important;
+    border: 0;
+    border-radius: 0 !important;
+    flex: 1;
+    min-height: 0;
+  }
+  .app-design .desk-panes[data-pane="chat"] > .conversation-pane,
+  .app-design .desk-panes[data-pane="document"] > .document-pane,
+  .app-design .desk-panes[data-pane="notes"] > .notes-pane {
+    display: flex !important;
+  }
+  .app-design .pane-heading {
+    padding: var(--dimension-13px) var(--dimension-18px);
+    min-height: var(--dimension-60px);
+  }
+  .app-design .pane-heading h2 {
+    font-size: var(--dimension-15px);
+  }
+  .app-design .messages {
+    padding: var(--dimension-16px) var(--dimension-19px);
+  }
+  .app-design .message {
+    max-width: var(--dimension-92pct);
+    padding: var(--dimension-12px) var(--dimension-15px);
+  }
+  .message-.app-design {
+    font-size: var(--dimension-15px);
+    line-height: 1.8;
+  }
+  .app-design .message-meta strong {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .message-meta time {
+    font-size: var(--dimension-10px);
+  }
+  .app-design .citation-links button {
+    font-size: var(--dimension-11px);
+  }
+  .app-design .composer {
+    padding: var(--dimension-12px) var(--dimension-17px);
+  }
+  .app-design .composer-box textarea {
+    font-size: var(--dimension-14px);
+    height: var(--dimension-45px);
+  }
+  .app-design .prompt-suggestions button {
+    font-size: var(--dimension-11px);
+  }
+  .app-design .source-strip {
+    padding: var(--dimension-10px) var(--dimension-13px) 0;
+  }
+  .app-design .source-tabs button {
+    font-size: var(--dimension-11px);
+    padding: var(--dimension-8px) var(--dimension-10px);
+  }
+  .app-design .source-strip-label > strong {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .source-filter button {
+    font-size: var(--dimension-11px);
+  }
+  .app-design .preview-toolbar {
+    padding: var(--dimension-7px) var(--dimension-10px);
+    min-height: var(--dimension-44px);
+  }
+  .app-design .preview-toolbar button {
+    font-size: var(--dimension-10px);
+    padding: var(--dimension-4px) var(--dimension-6px);
+  }
+  .app-design .page-control {
+    font-size: var(--dimension-10px);
+  }
+  .app-design .paper-viewport {
+    padding: var(--dimension-17px) var(--dimension-14px);
+  }
+  .app-design .paper {
+    min-width: var(--dimension-260px);
+    padding: var(--dimension-30px) var(--dimension-25px);
+    min-height: var(--dimension-620px);
+  }
+  .app-design .paper h1 {
+    font-size: var(--dimension-29px);
+  }
+  .app-design .paper p {
+    font-size: var(--dimension-13px);
+  }
+  .app-design .paper-foot {
+    font-size: var(--dimension-7px);
+  }
+  .app-design .preview-foot {
+    font-size: var(--dimension-9px);
+  }
+  .app-design .notes-tools {
+    padding: var(--dimension-13px) var(--dimension-17px) var(--dimension-9px);
+  }
+  .app-design .notes-tools button {
+    font-size: var(--dimension-12px);
+    padding: var(--dimension-8px);
+  }
+  .app-design .highlight-hint {
+    font-size: var(--dimension-11px);
+  }
+  .app-design .notes-label {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .notes-footer {
+    padding: var(--dimension-10px) var(--dimension-17px);
+  }
+  .app-design .notes-footer .text-button {
+    font-size: var(--dimension-12px);
+  }
+  .app-design #notes-editor {
+    font-size: var(--dimension-16px);
+    line-height: 1.9;
+    min-height: var(--dimension-140px);
+  }
+  .app-design .highlights-heading {
+    font-size: var(--dimension-13px);
+  }
+  .app-design .highlight-card q {
+    font-size: var(--dimension-13px);
+  }
+  .app-design .highlight-card small {
+    font-size: var(--dimension-10px);
+  }
+  .app-design .guest-shell {
+    padding: 0 var(--dimension-17px);
+  }
+  .app-design .guest-shell > header {
+    gap: var(--dimension-10px);
+  }
+  .app-design .guest-shell > header > span {
+    font-size: var(--dimension-10px);
+  }
+  .app-design .guest-shell > header .button {
+    font-size: var(--dimension-10px);
+    padding: var(--dimension-7px);
+  }
+  .app-design .guest-title h1 {
+    font-size: var(--dimension-23px);
+  }
+  .app-design .guest-content .message {
+    max-width: var(--dimension-95pct);
+  }
+  .app-design .guest-shell > footer .button {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .guest-shell > footer p {
+    font-size: var(--dimension-10px);
+  }
+  .app-design dialog {
+    padding: var(--dimension-22px);
+  }
+  .app-design .art-background {
+    inset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-design *,
+  .app-design *:before,
+  .app-design *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+.app-design .history-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-3px);
+  padding-right: var(--dimension-10px);
+  border-right: var(--dimension-1px) solid var(--line);
+  flex-shrink: 0;
+}
+.app-design .history-buttons .icon-button {
+  height: var(--dimension-30px);
+  width: var(--dimension-30px);
+  border: var(--dimension-1px) solid transparent;
+}
+.app-design .history-buttons .icon-button:not(:disabled):hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--tint);
+}
+.app-design .history-buttons .icon-button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+.app-design .history-buttons .icon-button svg {
+  width: var(--dimension-17px);
+  height: var(--dimension-17px);
+}
+.app-design .desk-back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dimension-8px);
+  flex-shrink: 0;
+  min-height: var(--dimension-35px);
+  font-size: var(--dimension-11px);
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  border-right: var(--dimension-1px) solid var(--line);
+  padding-right: var(--dimension-17px);
+}
+.app-design .desk-back-home svg {
+  width: var(--dimension-17px);
+  height: var(--dimension-17px);
+  transition: transform 0.2s ease;
+}
+.app-design .desk-back-home:hover {
+  color: var(--accent);
+}
+.app-design .desk-back-home:hover svg {
+  transform: translateX(var(--dimension--4px));
+}
+.app-design .desk-back-home:focus-visible,
+.app-design .history-buttons button:focus-visible {
+  outline: var(--dimension-2px) solid var(--accent);
+  outline-offset: var(--dimension-3px);
+}
+.app-design:not(.desk-.app-design) .art-background > i:first-child {
+  width: var(--dimension-420px);
+  height: var(--dimension-420px);
+  top: auto;
+  bottom: var(--dimension--180px);
+  right: var(--dimension--70px);
+  background: none;
+  border: var(--dimension-36px) solid var(--accent);
+  opacity: 0.12;
+  animation: modernist-rotate 11s ease-in-out infinite alternate;
+}
+.app-design:not(.desk-.app-design) .art-background > i:nth-child(3) {
+  width: var(--dimension-190px);
+  height: var(--dimension-190px);
+  top: var(--dimension-18pct);
+  right: var(--dimension--115px);
+  background: var(--accent);
+  opacity: 0.1;
+  animation: modernist-drift 8s ease-in-out infinite alternate;
+}
+.app-design:not(.desk-.app-design) .grid-lines {
+  opacity: 0.09;
+  animation: grid-drift 12s linear infinite;
+}
+.app-design .workspace-summary:before {
+  height: var(--dimension-8px);
+  top: var(--dimension--13px);
+  background-size: var(--dimension-200pct) var(--dimension-100pct);
+  animation: palette-travel 7s ease-in-out infinite alternate;
+}
+.app-design .library-title h1 {
+  animation: modernist-heading 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.app-design .library-title .eyebrow {
+  animation: modernist-heading 0.65s 0.06s both;
+}
+.app-design .file-row {
+  animation: modernist-row 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--i, 0) * 0.055s);
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.app-design .file-row:hover {
+  box-shadow: inset var(--dimension-4px) 0 0 var(--accent);
+}
+.app-design .library-shell .button {
+  transition:
+    transform 0.22s,
+    box-shadow 0.22s,
+    background 0.22s;
+  position: relative;
+}
+.app-design .library-shell .button:not(:disabled):hover {
+  transform: translate(var(--dimension--2px), var(--dimension--2px));
+  box-shadow: var(--dimension-3px) var(--dimension-3px) 0 var(--ink);
+}
+.app-design .library-shell .button:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+.app-design .library-nav nav button {
+  position: relative;
+  overflow: hidden;
+}
+.app-design .library-nav nav button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: var(--dimension-100pct);
+  height: var(--dimension-3px);
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+.app-design .library-nav nav button:hover:after,
+.app-design .library-nav nav button.active:after {
+  transform: scaleX(1);
+}
+@keyframes modernist-rotate {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+  to {
+    transform: translate(var(--dimension--170px), var(--dimension--60px))
+      rotate(65deg);
+  }
+}
+@keyframes modernist-drift {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+  to {
+    transform: translate(var(--dimension--105px), var(--dimension-140px))
+      rotate(90deg);
+  }
+}
+@keyframes palette-travel {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: var(--dimension-100pct) 0;
+  }
+}
+@keyframes modernist-heading {
+  from {
+    opacity: 0;
+    transform: translateY(var(--dimension-22px));
+    clip-path: inset(var(--dimension-100pct) 0 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0);
+  }
+}
+@keyframes modernist-row {
+  from {
+    opacity: 0;
+    transform: translateY(var(--dimension-16px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1150px) {
+  .app-design .desk-back-home {
+    font-size: var(--dimension-10px);
+    padding-right: var(--dimension-10px);
+    gap: var(--dimension-5px);
+  }
+}
+@media (max-width: 700px) {
+  .app-design .library-title {
+    position: relative;
+  }
+  .app-design .history-buttons {
+    gap: 0;
+    padding-right: var(--dimension-5px);
+  }
+  .app-design .history-buttons .icon-button {
+    width: var(--dimension-27px);
+    height: var(--dimension-30px);
+  }
+  .app-design .desk-back-home {
+    flex-direction: column;
+    gap: var(--dimension-1px);
+    border-right: 0;
+    padding-right: 0;
+    font-size: var(--dimension-9px);
+  }
+  .app-design .desk-back-home span {
+    max-width: var(--dimension-44px);
+    text-align: center;
+    line-height: 1.15;
+  }
+  .app-design .desk-back-home svg {
+    width: var(--dimension-15px);
+    height: var(--dimension-15px);
+  }
+  .app-design:not(.desk-.app-design) .art-background > i:first-child {
+    width: var(--dimension-240px);
+    height: var(--dimension-240px);
+    border-width: var(--dimension-22px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-design *,
+  .app-design *:before,
+  .app-design *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+.app-design .finder-location {
+  display: flex;
+  align-items: center;
+  gap: var(--dimension-12px);
+  min-width: 0;
+}
+.app-design .finder-location .history-buttons {
+  gap: var(--dimension-4px);
+  padding-right: var(--dimension-12px);
+}
+.app-design .finder-location .history-buttons .icon-button {
+  width: var(--dimension-32px);
+  height: var(--dimension-32px);
+  background: var(--surface);
+}
+@media (max-width: 700px) {
+  .app-design .finder-location {
+    width: var(--dimension-100pct);
+    gap: var(--dimension-10px);
+  }
+  .app-design .finder-location .history-buttons {
+    padding-right: var(--dimension-10px);
+  }
+}
+.app-design .button,
+.app-design .library-top .button,
+.app-design .desk-actions .button {
+  font-size: var(--dimension-14px);
+  min-height: var(--dimension-40px);
+  padding: var(--dimension-9px) var(--dimension-13px);
+  gap: var(--dimension-8px);
+}
+.app-design .button svg,
+.app-design .text-button svg,
+.app-design .breadcrumb svg,
+.app-design .search svg {
+  width: var(--dimension-20px);
+  height: var(--dimension-20px);
+}
+.app-design .icon-button,
+.app-design .finder-location .history-buttons .icon-button,
+.app-design .pane-heading .icon-button {
+  width: var(--dimension-40px);
+  height: var(--dimension-40px);
+}
+.app-design .icon-button svg,
+.app-design .history-buttons .icon-button svg,
+.app-design .pane-heading .icon-button svg {
+  width: var(--dimension-22px);
+  height: var(--dimension-22px);
+}
+.app-design .text-button,
+.app-design .breadcrumb,
+.app-design .breadcrumb button,
+.app-design .search input,
+.app-design .selection-bar > label,
+.app-design .selection-bar .text-button {
+  font-size: var(--dimension-14px);
+}
+.app-design input[type="checkbox"] {
+  width: var(--dimension-19px);
+  height: var(--dimension-19px);
+}
+.app-design .search {
+  min-height: var(--dimension-42px);
+}
+.app-design .search input {
+  min-width: 0;
+}
+.app-design .view-switch button {
+  min-width: var(--dimension-38px);
+  min-height: var(--dimension-36px);
+  align-items: center;
+  justify-content: center;
+}
+.app-design .view-switch svg {
+  width: var(--dimension-22px);
+  height: var(--dimension-22px);
+}
+.app-design .library-nav nav button,
+.app-design .library-nav nav button,
+.app-design .workspace-button strong,
+.app-design .workspace-button strong {
+  font-size: var(--dimension-14px);
+}
+.app-design .workspace-button small,
+.app-design .library-top > div:first-child {
+  font-size: var(--dimension-12px);
+}
+.app-design .library-nav nav svg {
+  width: var(--dimension-22px);
+  height: var(--dimension-22px);
+}
+.app-design .file-symbol,
+.app-design .file-symbol.folder {
+  width: var(--dimension-42px);
+  height: var(--dimension-44px);
+}
+.app-design .file-symbol svg {
+  width: var(--dimension-25px);
+  height: var(--dimension-27px);
+}
+.app-design .file-name strong {
+  font-size: var(--dimension-16px);
+}
+.app-design .file-name small,
+.app-design .file-meta,
+.app-design .file-collection.grid .file-meta,
+.app-design .status,
+.app-design .file-head,
+.app-design .finder-footer,
+.app-design .selection-bar .muted {
+  font-size: var(--dimension-12px);
+}
+.app-design .row-action {
+  font-size: var(--dimension-14px);
+  min-height: var(--dimension-40px);
+}
+.app-design .file-collection.list .file-row {
+  min-height: var(--dimension-78px);
+}
+.app-design .file-collection.list .file-head,
+.app-design .file-collection.list .file-row {
+  grid-template-columns: var(--dimension-25px) minmax(
+      var(--dimension-160px),
+      1fr
+    ) var(--dimension-100px) var(--dimension-90px) var(--dimension-158px);
+}
+.app-design .desk-back-home {
+  font-size: var(--dimension-14px);
+  min-height: var(--dimension-40px);
+  gap: var(--dimension-8px);
+}
+.app-design .desk-back-home svg {
+  width: var(--dimension-22px);
+  height: var(--dimension-22px);
+}
+.app-design .desk-identity strong {
+  font-size: var(--dimension-16px);
+}
+.app-design .desk-identity small,
+.app-design .save-state {
+  font-size: var(--dimension-12px);
+}
+.app-design .pane-heading h2 {
+  font-size: var(--dimension-18px);
+}
+.app-design .pane-heading .eyebrow {
+  font-size: var(--dimension-11px);
+}
+.app-design .avatars.small span {
+  width: var(--dimension-30px);
+  height: var(--dimension-30px);
+  font-size: var(--dimension-10px);
+}
+.app-design .message-.app-design {
+  font-size: var(--dimension-16px);
+  line-height: 1.75;
+}
+.app-design .message-meta strong {
+  font-size: var(--dimension-13px);
+}
+.app-design .message-meta time {
+  font-size: var(--dimension-11px);
+}
+.app-design .citation-links button,
+.app-design .citation-links b,
+.app-design .message-tools,
+.app-design .message-tools button,
+.app-design .conversation-date {
+  font-size: var(--dimension-12px);
+}
+.app-design .citation-links button {
+  padding: var(--dimension-8px);
+  min-height: var(--dimension-36px);
+}
+.app-design .prompt-suggestions button {
+  font-size: var(--dimension-12px);
+  min-height: var(--dimension-34px);
+}
+.app-design .composer-box textarea {
+  font-size: var(--dimension-15px);
+  height: var(--dimension-50px);
+}
+.app-design .composer-box > div > span,
+.app-design .composer > small {
+  font-size: var(--dimension-11px);
+}
+.app-design .composer-box > div svg {
+  width: var(--dimension-17px);
+  height: var(--dimension-17px);
+}
+.app-design .composer-box > div button {
+  width: var(--dimension-38px);
+  height: var(--dimension-38px);
+  font-size: var(--dimension-22px);
+}
+.app-design .source-strip-label > strong {
+  font-size: var(--dimension-14px);
+}
+.app-design .source-strip-label > strong small {
+  font-size: var(--dimension-12px);
+}
+.app-design .source-filter button,
+.app-design .source-tabs button {
+  font-size: var(--dimension-12px);
+  min-height: var(--dimension-34px);
+}
+.app-design .source-tabs button svg {
+  width: var(--dimension-18px);
+  height: var(--dimension-18px);
+}
+.app-design .preview-toolbar button,
+.app-design .page-control {
+  font-size: var(--dimension-13px);
+}
+.app-design .preview-toolbar button {
+  min-height: var(--dimension-34px);
+  min-width: var(--dimension-30px);
+}
+.app-design .zoom-control button:first-child,
+.app-design .zoom-control button:last-child,
+.app-design .page-control button {
+  font-size: var(--dimension-22px);
+}
+.app-design .notes-tools button {
+  font-size: var(--dimension-13px);
+  min-height: var(--dimension-40px);
+}
+.app-design .notes-tools svg {
+  width: var(--dimension-20px);
+  height: var(--dimension-20px);
+}
+.app-design .notes-label,
+.app-design .highlight-hint,
+.app-design .notes-footer,
+.app-design .preview-foot {
+  font-size: var(--dimension-12px);
+}
+.app-design #notes-editor {
+  font-size: var(--dimension-16px);
+}
+.app-design.library-files {
+  height: 100dvh;
+  overflow: hidden;
+}
+.app-design.library-files #root {
+  height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.app-design.library-files .library-shell {
+  flex: 1;
+  min-height: 0;
+  width: var(--dimension-100pct);
+  overflow: hidden;
+}
+.app-design.library-files .library-shell {
+  display: flex;
+  flex-direction: column;
+}
+.app-design.library-files .library-nav {
+  min-height: 0;
+}
+.app-design.library-files .library-nav {
+  flex: 0 0 var(--dimension-73px);
+}
+.app-design.library-files .library-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+}
+.app-design.library-files .library-top {
+  flex: 0 0 var(--dimension-56px);
+}
+.app-design.library-files .library-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  width: var(--dimension-100pct);
+  margin: 0 auto;
+  padding-top: var(--dimension-22px);
+  padding-bottom: var(--dimension-14px);
+}
+.app-design.library-files .library-title {
+  flex-shrink: 0;
+  margin-bottom: var(--dimension-24px);
+}
+.app-design.library-files .library-title h1 {
+  font-size: var(--dimension-48px);
+  letter-spacing: var(--dimension--2-6px);
+  margin: var(--dimension-5px) 0 var(--dimension-8px);
+}
+.app-design.library-files .library-title p,
+.app-design.library-files .library-title p {
+  font-size: var(--dimension-14px);
+}
+.app-design.library-files .workspace-summary {
+  flex-shrink: 0;
+  margin-bottom: var(--dimension-20px);
+  padding-top: var(--dimension-12px);
+  padding-bottom: var(--dimension-12px);
+  gap: var(--dimension-26px);
+}
+.app-design.library-files .workspace-summary strong span {
+  font-size: var(--dimension-13px);
+  margin-left: var(--dimension-5px);
+}
+.app-design.library-files .workspace-summary .text-button {
+  font-size: var(--dimension-13px);
+}
+.app-design.library-files .finder {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+.app-design.library-files .finder-toolbar,
+.app-design.library-files .selection-bar,
+.app-design.library-files .finder-footer {
+  flex-shrink: 0;
+}
+.app-design.library-files .finder-toolbar {
+  padding-top: var(--dimension-10px);
+  padding-bottom: var(--dimension-10px);
+}
+.app-design.library-files .selection-bar {
+  min-height: var(--dimension-48px);
+}
+.app-design.library-files #file-items {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: auto;
+  scrollbar-color: var(--muted) var(--bg);
+  overflow-anchor: none;
+}
+.app-design.library-files #file-items::-webkit-scrollbar {
+  width: var(--dimension-12px);
+}
+.app-design.library-files #file-items::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+.app-design.library-files #file-items::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border: var(--dimension-3px) solid var(--bg);
+  border-radius: var(--dimension-8px);
+  min-height: var(--dimension-40px);
+}
+.app-design.library-files #file-items:focus-visible {
+  outline: var(--dimension-2px) solid var(--accent);
+  outline-offset: var(--dimension--2px);
+}
+.app-design.library-files .file-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  min-height: var(--dimension-36px);
+  border-bottom: var(--dimension-1px) solid var(--line);
+}
+.app-design.library-files .library-caption {
+  flex-shrink: 0;
+  margin-top: var(--dimension-10px);
+}
+@media (max-width: 1250px) {
+  .app-design .wide-actions {
+    display: none;
+  }
+  .app-design .compact-more {
+    display: inline-flex;
+  }
+  .app-design .save-state {
+    display: none;
+  }
+  .app-design .file-collection.list .file-head,
+  .app-design .file-collection.list .file-row {
+    grid-template-columns: var(--dimension-25px) minmax(
+        var(--dimension-120px),
+        1fr
+      ) var(--dimension-85px) var(--dimension-75px) var(--dimension-145px);
+  }
+  .app-design .notes-tools {
+    flex-wrap: wrap;
+  }
+  .app-design .preview-toolbar {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 950px) {
+  .app-design .file-collection.list .file-head,
+  .app-design .file-collection.list .file-row {
+    grid-template-columns: var(--dimension-25px) minmax(
+        var(--dimension-110px),
+        1fr
+      ) var(--dimension-75px) var(--dimension-135px);
+  }
+  .app-design .file-collection.list .file-meta {
+    display: none;
+  }
+  .app-design .file-head > span:nth-child(3) {
+    display: none;
+  }
+  .app-design.library-files .workspace-summary {
+    gap: var(--dimension-18px);
+  }
+  .app-design.library-files .workspace-summary .summary-label {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .app-design .library-top .button {
+    padding: var(--dimension-8px);
+  }
+  .app-design .finder-controls {
+    width: var(--dimension-100pct);
+  }
+  .app-design .search {
+    flex: 1;
+    min-width: 0;
+  }
+  .app-design .search input {
+    width: var(--dimension-100pct);
+  }
+  .app-design .file-collection.list .file-head,
+  .app-design .file-collection.list .file-row {
+    grid-template-columns: var(--dimension-22px) minmax(0, 1fr) var(
+        --dimension-114px
+      );
+    gap: var(--dimension-8px);
+    padding-left: var(--dimension-10px);
+    padding-right: var(--dimension-10px);
+  }
+  .app-design .file-collection.list .status,
+  .app-design .file-head > span:nth-child(4) {
+    display: none;
+  }
+  .app-design .file-name {
+    gap: var(--dimension-8px);
+  }
+  .app-design .file-name strong {
+    font-size: var(--dimension-14px);
+  }
+  .app-design .file-name small {
+    font-size: var(--dimension-11px);
+  }
+  .app-design .file-symbol,
+  .app-design .file-symbol.folder {
+    width: var(--dimension-34px);
+    height: var(--dimension-38px);
+  }
+  .app-design .file-symbol svg {
+    width: var(--dimension-23px);
+    height: var(--dimension-25px);
+  }
+  .app-design .row-action {
+    font-size: var(--dimension-12px);
+    white-space: normal;
+  }
+  .app-design .file-collection.grid {
+    grid-template-columns: 1fr;
+  }
+  .app-design .selection-bar {
+    padding: var(--dimension-7px) var(--dimension-10px);
+    gap: var(--dimension-8px);
+    flex-wrap: wrap;
+  }
+  .app-design .selection-bar .muted {
+    display: none;
+  }
+  .app-design .selection-bar > div {
+    gap: var(--dimension-9px);
+    flex-wrap: wrap;
+  }
+  .app-design .selection-bar .text-button {
+    font-size: var(--dimension-12px);
+  }
+  .app-design .finder-footer {
+    padding: var(--dimension-8px) var(--dimension-10px);
+  }
+  .app-design .finder-footer > span:last-child {
+    display: none;
+  }
+  .app-design.library-files .library-shell {
+    display: flex;
+    flex-direction: column;
+  }
+  .app-design.library-files .library-nav,
+  .app-design.library-files .library-nav {
+    flex: 0 0 auto;
+  }
+  .app-design.library-files .library-top {
+    flex-basis: var(--dimension-54px);
+  }
+  .app-design.library-files .library-content {
+    padding-top: var(--dimension-14px);
+    padding-bottom: var(--dimension-10px);
+  }
+  .app-design.library-files .library-title {
+    margin-bottom: var(--dimension-16px);
+  }
+  .app-design.library-files .library-title h1,
+  .app-design.library-files .library-title h1 {
+    font-size: var(--dimension-32px);
+    letter-spacing: var(--dimension--1-4px);
+    margin: 0 0 var(--dimension-7px);
+  }
+  .app-design.library-files .library-title .eyebrow,
+  .app-design.library-files .library-title p {
+    display: none;
+  }
+  .app-design.library-files .title-actions {
+    padding: 0;
+    margin-top: var(--dimension-10px);
+  }
+  .app-design.library-files .workspace-summary {
+    padding: var(--dimension-8px) 0;
+    margin-bottom: var(--dimension-14px);
+    gap: var(--dimension-18px);
+  }
+  .app-design.library-files .workspace-summary strong {
+    font-size: var(--dimension-23px);
+  }
+  .app-design.library-files .workspace-summary strong span {
+    font-size: var(--dimension-12px);
+  }
+  .app-design.library-files .workspace-summary .text-button {
+    font-size: var(--dimension-12px);
+  }
+  .app-design.library-files .finder-toolbar {
+    gap: var(--dimension-8px);
+    padding-top: var(--dimension-7px);
+    padding-bottom: var(--dimension-7px);
+  }
+  .app-design.library-files .library-caption {
+    display: none;
+  }
+  .app-design .desk-header {
+    gap: var(--dimension-10px);
+    flex-basis: var(--dimension-72px);
+  }
+  .app-design .desk-back-home {
+    font-size: var(--dimension-11px);
+    gap: var(--dimension-3px);
+  }
+  .app-design .desk-back-home span {
+    max-width: var(--dimension-60px);
+  }
+  .app-design .desk-identity strong {
+    font-size: var(--dimension-14px);
+  }
+  .app-design .desk-identity small {
+    font-size: var(--dimension-11px);
+  }
+  .app-design .desk-actions {
+    gap: var(--dimension-5px);
+  }
+  .app-design .desk-actions .button {
+    padding: var(--dimension-8px);
+  }
+  .app-design .desk-actions .button svg {
+    width: var(--dimension-20px);
+    height: var(--dimension-20px);
+  }
+  .app-design .desk-panes .pane-heading {
+    padding: var(--dimension-12px) var(--dimension-15px);
+  }
+  .app-design .preview-toolbar {
+    gap: var(--dimension-4px);
+    padding: var(--dimension-6px) var(--dimension-8px);
+  }
+  .app-design .preview-toolbar button {
+    padding: var(--dimension-4px);
+  }
+  .app-design .desk-mobile-tabs button {
+    font-size: var(--dimension-14px);
+    min-height: var(--dimension-42px);
+  }
+}
+@media (max-height: 760px) {
+  .app-design.library-files .library-content {
+    padding-top: var(--dimension-12px);
+    padding-bottom: var(--dimension-8px);
+  }
+  .app-design.library-files .library-title {
+    margin-bottom: var(--dimension-18px);
+  }
+  .app-design.library-files .workspace-summary {
+    display: none;
+  }
+  .app-design.library-files .library-caption {
+    display: none;
+  }
+  .app-design.library-files .library-title h1,
+  .app-design.library-files .library-title h1 {
+    font-size: var(--dimension-34px);
+    letter-spacing: var(--dimension--1-5px);
+  }
+  .app-design.library-files .library-title p {
+    display: none;
+  }
+}

@@ -1,0 +1,103 @@
+# syntax=docker/dockerfile:1
+
+# Stage 1: Builder
+# Docker's official python image, pulled from its AWS mirror (same image,
+# same digest as Docker Hub's python:3.11-slim). Docker Hub's token service
+# timed out on GitHub's runners (504) and blocked builds; this mirror doesn't
+# depend on it.
+FROM public.ecr.aws/docker/library/python:3.11-slim AS builder
+
+WORKDIR /app
+
+# Create and activate virtual environment
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Install dependencies. requirements-api.txt is the live-API subset of
+# requirements.txt (drops ragas/datasets/requests, which only the offline
+# eval script and Streamlit UI need) — smaller image, faster cold starts.
+# No torch and no sentence-transformers: embeddings come from the same
+# bge-m3 on Cloudflare Workers AI (APP/providers/embedding.py), which took
+# ~2.3GB of weights and the multi-GB torch install out of the image and
+# with them most of the cold start.
+# The cache mount persists pip's download/wheel cache across builds (in
+# BuildKit's build cache, not an image layer), so unchanged packages are
+# never re-downloaded even when requirements-api.txt changes.
+COPY requirements-api.txt .
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install -r requirements-api.txt
+
+# Stage 2: Models
+#
+# The FlashRank reranker and tiktoken's encoding files (tens of MB). Separate
+# from the builder so dependency bumps don't re-download them;
+# fetch_models.py is its only input.
+FROM public.ecr.aws/docker/library/python:3.11-slim AS models
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install flashrank tiktoken
+ENV MODEL_DIR=/opt/models
+
+COPY docker/fetch_models.py /fetch_models.py
+RUN python /fetch_models.py
+
+# Stage 3: Runtime
+FROM public.ecr.aws/docker/library/python:3.11-slim
+
+WORKDIR /app
+
+# Copy virtual environment from builder
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+ENV PYTHONPATH="/home/appuser/app"
+
+# Create a non-root user
+RUN useradd --create-home appuser
+
+# Pre-create the volume mount points with correct ownership. data/ subpaths
+# (chunks/indexes/evals, rag.db, documents/{owner}/{doc}/) are created on
+# demand by the app itself (mkdir(parents=True, exist_ok=True) at each write
+# site), so nothing more specific needs pre-creating there.
+RUN mkdir -p /home/appuser/app/data \
+    && chown -R appuser:appuser /home/appuser/app/data
+
+# Reranker weights, baked in by the models stage. --chown during COPY rather
+# than a following chown -R, which would copy every file into a second layer.
+COPY --from=models --chown=appuser:appuser /opt/models /opt/models
+
+# Point FlashRank at the baked copy. Its default, data/flashrank_cache, lands
+# on the Azure Files share in production and is slow to read.
+ENV FLASHRANK_CACHE_DIR=/opt/models/flashrank \
+    TIKTOKEN_CACHE_DIR=/opt/models/tiktoken \
+    EMBEDDING_BACKEND=cloudflare
+
+USER appuser
+WORKDIR /home/appuser/app
+
+# The reranker and tokenizer files must be in the image, not fetched after
+# every wake. (CI also imports the app with networking off.)
+RUN test -n "$(ls -A /opt/models/flashrank)" && test -n "$(ls -A /opt/models/tiktoken)" \
+    && test -s /opt/models/geo/dbip-country-lite.mmdb
+
+# Copy application code
+COPY --chown=appuser:appuser APP/ ./APP/
+# Sign-up checks read these lists at runtime; fail the build, not the first
+# sign-up, if an ignore rule ever drops them from the image.
+RUN test -s APP/auth/lists/disposable_domains.txt && test -s APP/auth/lists/common_passwords.txt
+# prompts/ holds the system prompt and the untrusted-data wrapper. It sits
+# outside APP/ so the security rules are reviewable on their own, which
+# means it needs copying explicitly — without it the container falls back
+# to a minimal prompt and build_rag_payload cannot find its template.
+COPY --chown=appuser:appuser prompts/ ./prompts/
+
+# The image's content tag, reported by /health as "version". Declared last so
+# it never invalidates the cached dependency and model layers above. (Which
+# commit a deployment came from is set at deploy time: DEPLOYED_COMMIT.)
+ARG IMAGE_VERSION=unknown
+ENV IMAGE_VERSION=$IMAGE_VERSION
+
+# Expose port and run application
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)" || exit 1
+CMD ["uvicorn", "APP.main:app", "--host", "0.0.0.0", "--port", "8000"]

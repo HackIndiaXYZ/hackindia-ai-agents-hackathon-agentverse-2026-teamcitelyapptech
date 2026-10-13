@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validRange,segmentRanges,renderRanges,locatable,uniqueCitations,annotationKey} from '../lib/ranges.mjs';
+const text='One passage. Two passages. <unsafe> & unchanged\n  spaces.';
+const page={text,extraction_version:'v1'};
+const cite=(id,start,end,extra={})=>({citation_id:id,page_char_start:start,page_char_end:end,extraction_version:'v1',...extra});
+test('one valid range renders only text.slice(start,end)',()=>{const html=renderRanges(page,[cite('a',4,11)],[],'a');assert.match(html,/>passage<\/mark>/);assert.ok(html.startsWith('One '));assert.ok(!html.includes('cited-passage'));});
+test('two disjoint ranges produce two distinct marks',()=>{const html=renderRanges(page,[cite('a',0,3),cite('b',13,16)],[],null);assert.equal((html.match(/<mark/g)||[]).length,2);});
+test('adjacent ranges retain every character',()=>{const parts=segmentRanges(text,[cite('a',0,3),cite('b',3,12)]);assert.equal(parts.map(p=>p.text).join(''),text);assert.equal(parts.length,3);});
+test('unexpected overlaps partition without duplicating or dropping text',()=>{const parts=segmentRanges(text,[cite('a',0,15),cite('b',10,20)]);assert.equal(parts.map(p=>p.text).join(''),text);assert.deepEqual(parts.find(p=>p.start===10).citationIds,['a','b']);assert.equal(new Set(parts.map(p=>p.key)).size,parts.length);});
+for(const [label,start,end] of [['missing',undefined,undefined],['null',null,null],['negative',-1,5],['reversed',5,2],['empty',3,3],['too long',0,1000],['fractional',1.5,5],['string','0',5]])test(`${label} offsets produce no mark`,()=>{assert.equal(validRange(text,start,end),false);assert.ok(!renderRanges(page,[cite('bad',start,end)],[],'bad').includes('<mark'));});
+test('extraction mismatch never applies stale offsets',()=>{assert.equal(locatable(page,cite('old',0,4,{extraction_version:'v0'})),false);assert.ok(!renderRanges(page,[cite('old',0,4,{extraction_version:'v0'})],[],'old').includes('<mark'));});
+test('missing page version is not trusted',()=>assert.equal(locatable({...page,extraction_version:''},cite('a',0,4,{extraction_version:''})),false));
+test('backend merged identity is reused without duplicate buttons',()=>assert.equal(uniqueCitations([cite('a',0,10),cite('a',0,10),cite('b',11,20)]).length,2));
+test('HTML and citation identities are escaped',()=>{const html=renderRanges(page,[cite('"<x>',26,text.length)],[],'"<x>');assert.ok(!html.includes('<unsafe>'));assert.ok(html.includes('&lt;unsafe&gt;'));});
+test('active plus saved overlap has deterministic classes',()=>{const a={...cite('a',0,3),id:'saved'};assert.match(renderRanges(page,[a],[a],'a'),/class="citation-range current-citation permanent-mark"/);});
+test('annotation uniqueness covers document page range and extraction',()=>{const a={document_id:'a',page_number:1,page_char_start:0,page_char_end:3,extraction_version:'v1'};assert.equal(annotationKey(a),annotationKey({...a,id:'different'}));assert.notEqual(annotationKey(a),annotationKey({...a,document_id:'b'}));});

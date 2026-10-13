@@ -1,0 +1,124 @@
+/* Highlights read like a highlighter pen: a light fill, no borders, the text
+   untouched. Saved highlights (yellow) stay. A citation (blue) is shown only
+   when it is opened: it flashes for a moment and fades away. The flash is an
+   inset shadow drawn over the fill, so a saved highlight under it reappears.
+   #paper carries --flash-delay (time since the citation was opened) and a
+   flash-a/flash-b class that changes on each click to replay the flash. */
+:root { --mark-saved: rgba(255, 213, 0, .28); --mark-saved-solid: #fff3b8; --mark-cite: rgba(78, 137, 232, .28); }
+.paper .page-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.paper .citation-range, .original-paper .citation-range { background: transparent; color: inherit; }
+.paper .permanent-mark, .original-paper .permanent-mark { background: var(--mark-saved); color: inherit; box-shadow: none; outline: none; padding: 0; }
+.paper .current-citation, .original-paper .current-citation {
+  outline: none; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  box-shadow: inset 0 0 0 100vmax var(--mark-cite);
+}
+/* The workspace adds flash-done when the flash is over (a timer, so it also
+   ends where animations are turned off for reduced motion). */
+#paper.flash-done .current-citation { animation: none; box-shadow: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .paper .current-citation, .original-paper .current-citation { animation: citation-flash-a 3.5s ease-in var(--flash-delay, 0ms) both; }
+  #paper.flash-b .current-citation { animation-name: citation-flash-b; }
+}
+@keyframes citation-flash-a { 0%, 70% { box-shadow: inset 0 0 0 100vmax var(--mark-cite); } 100% { box-shadow: inset 0 0 0 100vmax rgba(78, 137, 232, 0); } }
+@keyframes citation-flash-b { 0%, 70% { box-shadow: inset 0 0 0 100vmax var(--mark-cite); } 100% { box-shadow: inset 0 0 0 100vmax rgba(78, 137, 232, 0); } }
+
+/* Originals rendered as documents. Pages keep the document's own colours
+   (white paper, its fonts) in both themes rather than being inverted. */
+.original-paper { zoom: var(--zoom, 1); min-height: 100%; }
+.original-paper .docx-wrapper { background: transparent; padding: 12px 0 24px; }
+.original-paper section.docx { box-shadow: 0 1px 3px rgba(0,0,0,.18); margin-bottom: 16px; color: #000; }
+/* Citely's own `p { color: var(--muted) }` must not reach into a document:
+   it greyed every paragraph (2.4:1 contrast on white in dark mode). This reset
+   is deliberately weaker than docx-preview's `.docx p.docx_*` style rules, so
+   colours the document itself specifies still win. */
+.original-docx p, .original-docx li, .original-docx td, .original-docx th { color: inherit; }
+.original-status { padding: 32px 16px; text-align: center; }
+.citation-links button[aria-pressed="true"] { border-color: #4e89e8; font-weight: 700; }
+.citation-links button small { display: block; }
+.notes-label:has(#notes-history) { display:flex; align-items:center; justify-content:space-between; }
+#modal textarea[readonly] { min-height: 130px; white-space: pre-wrap; }
+.upload-announcement { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.status small { display: block; white-space: normal; }
+.citation-links button { flex-wrap: wrap; }
+.citation-preview { display: block; flex-basis: 100%; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Spreadsheet originals: tabs above a grid that fills the pane. Pages stay
+   white "paper" in both themes, like document originals. */
+.original-paper.original-sheet { height: 100%; min-height: 360px; }
+.original-sheet .original-host { height: 100%; }
+.original-xlsx { display: flex; flex-direction: column; height: 100%; background: #fff; color: #1f2328; box-shadow: 0 1px 3px rgba(0,0,0,.18); color-scheme: light; }
+.original-xlsx .xl-tabs { display: flex; gap: 2px; overflow-x: auto; padding: 6px 6px 0; border-bottom: 1px solid #d9dce1; background: #f3f4f6; flex: none; }
+.original-xlsx .xl-tabs button { border: 1px solid transparent; border-bottom: none; background: transparent; padding: 5px 12px; font: inherit; font-size: .8125rem; color: #4b5563; border-radius: 4px 4px 0 0; white-space: nowrap; cursor: pointer; }
+.original-xlsx .xl-tabs button[aria-selected=true] { background: #fff; border-color: #d9dce1; color: #111827; font-weight: 600; margin-bottom: -1px; }
+.original-xlsx .xl-tabs button:focus-visible { outline: 2px solid #4e89e8; outline-offset: -2px; }
+.original-xlsx .xl-frame { position: relative; flex: 1; min-height: 0; }
+.original-xlsx .xl-grid { position: absolute; inset: 0; }
+.original-xlsx .ag-cell { user-select: none; }
+.original-xlsx .xl-rownum { color: #6b7280; background: #f3f4f6; text-align: right; }
+.original-xlsx .xl-number { text-align: right; }
+.original-xlsx .xl-uncalculated { color: #6b7280; }
+.original-xlsx .xl-error { color: #b42318; }
+/* Cells under a merge are never painted over it, and never take clicks. */
+.original-xlsx .xl-covered { visibility: hidden; pointer-events: none; }
+.original-xlsx .xl-merge { background: #fff; z-index: 1; }
+/* Opaque yellow: a raised merged cell must keep covering the rows beneath it. */
+.original-xlsx .ag-cell.permanent-mark, .original-xlsx .xl-merge-box.permanent-mark { background: var(--mark-saved-solid); }
+.original-xlsx .ag-cell.xl-selected, .original-xlsx .xl-merge-box.xl-selected { box-shadow: inset 0 0 0 9999px rgba(78,137,232,.16); }
+.original-xlsx .xl-overlay { position: absolute; overflow: hidden; pointer-events: none; z-index: 2; }
+.original-xlsx .xl-overlay-layer { position: absolute; top: 0; left: 0; }
+.original-xlsx .xl-merge-box { position: absolute; background: #fff; border: 1px solid #e5e7eb; pointer-events: auto; overflow: hidden; }
+.original-xlsx .xl-merge-box span { display: block; padding: 3px 6px; font-size: .8125rem; }
+.original-xlsx .ag-row.xl-row-span { z-index: 2; }
+
+/* Slide originals: the deck scrolls in its own container; highlights are
+   overlays over exactly the cited characters. */
+.original-paper.original-slides { height: 100%; min-height: 360px; }
+.original-slides .original-host { height: 100%; }
+.original-pptx { position: relative; height: 100%; overflow: auto; overscroll-behavior: contain; color-scheme: light; }
+.original-pptx .pp-overlays { position: absolute; top: 0; left: 0; width: 0; height: 0; pointer-events: none; z-index: 5; }
+.original-pptx .pp-mark { position: absolute; pointer-events: none; border-radius: 2px; }
+
+/* Shown while the workspace is open from this device's copy and the server
+   wakes; every action that needs the server waits until it is gone. */
+.connecting-pill { position: fixed; top: 78px; left: 50%; transform: translateX(-50%); z-index: 50; display: flex; align-items: center; gap: 10px;
+  max-width: calc(100vw - 32px); padding: 7px 14px; border-radius: 999px; font: 0.8125rem/1.3 'DM Sans', sans-serif;
+  background: var(--surface, #fff); color: var(--ink, #202020); border: 1px solid rgba(0,0,0,.12); box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+.connecting-pill::before { content: ''; flex: none; width: 8px; height: 8px; border-radius: 50%; background: #e0a21b; }
+@media (max-width: 760px) { .connecting-pill { top: 136px; font-size: 0.75rem; padding: 6px 12px; } }
+
+/* Demo allowance: questions left under the composer, uploads left on the button. */
+.usage-note { font-weight: 600; }
+.usage-note.exhausted { color: var(--accent, #e32c12); }
+.usage-count { margin-left: 6px; font-size: 0.75em; font-weight: 600; opacity: .75; }
+#message-input:disabled { opacity: .7; cursor: not-allowed; }
+
+/* Upload allowance meter: under Upload in the library, and in the upload dialog. */
+.title-side { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.usage-meter { display: flex; align-items: center; gap: 10px; font-size: 0.8125rem; color: var(--muted, #5f646b); }
+.usage-meter strong { color: var(--ink, #202020); }
+.usage-bar { display: inline-flex; gap: 3px; flex: none; }
+.usage-bar i { width: 18px; height: 6px; border-radius: 3px; background: var(--accent, #e32c12); }
+.usage-bar i.used { background: var(--line, #d6d3cc); }
+.usage-bar i.capped { background: transparent; box-shadow: inset 0 0 0 1px var(--muted, #8a8a85); opacity: .7; }
+.usage-meter.exhausted { color: var(--accent, #e32c12); font-weight: 600; }
+#modal .usage-meter { margin: 0 0 14px; }
+[data-upload][data-exhausted] { opacity: .55; }   /* still clickable: it explains the limit */
+@media (max-width: 760px) { .title-side { align-items: flex-start; } }
+
+/* PDF originals: a picture of each page with a transparent text layer over it. The
+   text layer is what highlights and selections attach to. Pages keep the PDF's own
+   white paper in both themes. */
+.original-pdf { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 12px 0 24px; zoom: var(--pdf-fit, 1); }
+.original-pdf .pdf-page { position: relative; flex: none; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.18); color: #000; }
+.original-pdf .pdf-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.original-pdf .textLayer { position: absolute; inset: 0; overflow: clip; line-height: 1; color: transparent; text-size-adjust: none; forced-color-adjust: none; }
+.original-pdf .textLayer span { position: absolute; white-space: pre; cursor: text; transform-origin: 0% 0%; color: transparent; }
+.original-pdf .textLayer mark { color: transparent; background: transparent; }
+.original-pdf .textLayer ::selection { background: rgba(78, 137, 232, .35); }
+/* Evidence read from a picture or a scanned page has no text to mark, so its place
+   on the page is marked instead: shown only when the citation is opened, then fading. */
+.original-pdf .pdf-region { position: absolute; pointer-events: none; border-radius: 2px; }
+.thumb-pdf canvas { display: block; }
+/* pdf.js appends a measuring canvas to <body>; its own stylesheet hides it. Without this rule it sat
+   below the app, making the page taller than the window so the window itself could scroll. */
+.hiddenCanvasElement { display: none; position: absolute; top: 0; left: 0; width: 0; height: 0; margin: 0; padding: 0; border: 0; }

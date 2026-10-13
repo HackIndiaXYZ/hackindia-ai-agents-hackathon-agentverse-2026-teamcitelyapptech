@@ -1,0 +1,198 @@
+{
+  "files": {
+    "xlsx": {
+      "parser": "azure-document-intelligence",
+      "pages": 1,
+      "chunks": 6
+    },
+    "pptx": {
+      "parser": "azure-document-intelligence",
+      "pages": 1,
+      "chunks": 2
+    }
+  },
+  "passed": 18,
+  "total": 20,
+  "cases": [
+    {
+      "id": "x01",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "The actual gross margin was 0.412 (41.2%). [1]",
+      "citations": []
+    },
+    {
+      "id": "x02",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "Operating cash flow (Actual) was 8400000. [1]",
+      "citations": []
+    },
+    {
+      "id": "x03",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "The target net promoter score is 55. [1]",
+      "citations": []
+    },
+    {
+      "id": "x04",
+      "passed": false,
+      "retrieved": false,
+      "answer": false,
+      "cited": null,
+      "answer_text": "Report date: 46112 [1]",
+      "citations": []
+    },
+    {
+      "id": "x05",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "Q3 revenue in the Nordics was 3,910,000. [1]",
+      "citations": []
+    },
+    {
+      "id": "x06",
+      "passed": false,
+      "retrieved": true,
+      "answer": false,
+      "cited": null,
+      "answer_text": "Siobhan Keane [1]",
+      "citations": []
+    },
+    {
+      "id": "x07",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "Operations in Gdańsk has 14 open roles. [1]",
+      "citations": []
+    },
+    {
+      "id": "x08",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "Qualify a second leasing partner by Q3 and cap any single lessor at 45% of the fleet. [1]",
+      "citations": []
+    },
+    {
+      "id": "x09",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "Daniel Okafor owns the data residency risk for EU customer records. [1]",
+      "citations": []
+    },
+    {
+      "id": "x10",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "354 [1]",
+      "citations": []
+    },
+    {
+      "id": "p01",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "On-time delivery reached 96.4% this quarter. [1]",
+      "citations": []
+    },
+    {
+      "id": "p02",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "The Rotterdam cross-dock handles 1,150 pallets a day. [1]",
+      "citations": []
+    },
+    {
+      "id": "p03",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "171 trucks [1]",
+      "citations": []
+    },
+    {
+      "id": "p04",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "Fleet utilisation in Iberia is 74%. [1]",
+      "citations": []
+    },
+    {
+      "id": "p05",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "60% of second-half diesel volume is hedged. [1]",
+      "citations": []
+    },
+    {
+      "id": "p06",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "Driver attrition in the Nordics is 19%, compared with a group average of 11%. [1]",
+      "citations": []
+    },
+    {
+      "id": "p07",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "45 drivers will be added in the third quarter. [1]",
+      "citations": []
+    },
+    {
+      "id": "p08",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "The capex budget for FY2026 is €12.5 million. [1]",
+      "citations": []
+    },
+    {
+      "id": "p09",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "€5.2 million [1]",
+      "citations": []
+    },
+    {
+      "id": "p10",
+      "passed": true,
+      "retrieved": true,
+      "answer": true,
+      "cited": null,
+      "answer_text": "The lost-time injury rate is 0.8 per million hours worked. [1]",
+      "citations": []
+    }
+  ]
+}

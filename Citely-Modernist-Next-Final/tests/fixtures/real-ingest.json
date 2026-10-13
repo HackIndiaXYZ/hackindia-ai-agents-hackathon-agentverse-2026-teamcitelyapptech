@@ -1,0 +1,42 @@
+{
+  "document_id": "7c2ee62e-409e-4a13-83d4-5472289a2ae9",
+  "filename": "Citely-Test-Report.docx",
+  "pages": [
+    {
+      "page": 1,
+      "text": "Citely Integration Test Document\nRevenue increased by 24% this year, driven primarily by expansion within enterprise accounts. Enterprise customers represented 62% of total revenue.\nOperating cash flow was 8.4 million dollars, compared with 6.1 million dollars in the previous year. Improved collections supported the increase.\nThe principal planning risks are slower enterprise purchase cycles and increased infrastructure costs.\nNet revenue retention reached 118%, reflecting deeper adoption and sustained customer engagement.",
+      "extraction_version": "1"
+    }
+  ],
+  "question": "What drove revenue growth?",
+  "answer": "Revenue growth was driven primarily by expansion within enterprise accounts [Source: Citely-Test-Report.docx | Page: 1]. The company also saw net revenue retention of 118%, reflecting deeper adoption and sustained customer engagement [Source: Citely-Test-Report.docx | Page: 1].",
+  "sources": [
+    {
+      "chunk_id": 0,
+      "source": "Citely-Test-Report.docx",
+      "page": 1,
+      "score": 0.040625,
+      "content": "Citely Integration Test Document\nRevenue increased by 24% this year, driven primarily by expansion within enterprise accounts. Enterprise customers represented 62% of total revenue.\nOperating cash flow was 8.4 million dollars, compared with 6.1 million dollars in the previous year. Improved collections supported the increase.",
+      "document_id": "7c2ee62e-409e-4a13-83d4-5472289a2ae9",
+      "citation_id": "d4ea1003-a0cb-4d40-a0cb-12315216b85f",
+      "page_char_start": 0,
+      "page_char_end": 327,
+      "quote": "Citely Integration Test Document\nRevenue increased by 24% this year, driven primarily by expansion within enterprise accounts. Enterprise customers represented 62% of total revenue.\nOperating cash flow was 8.4 million dollars, compared with 6.1 million dollars in the previous year. Improved collections supported the increase.",
+      "extraction_version": "1"
+    },
+    {
+      "chunk_id": 1,
+      "source": "Citely-Test-Report.docx",
+      "page": 1,
+      "score": 0.040625,
+      "content": "The principal planning risks are slower enterprise purchase cycles and increased infrastructure costs.\nNet revenue retention reached 118%, reflecting deeper adoption and sustained customer engagement.",
+      "document_id": "7c2ee62e-409e-4a13-83d4-5472289a2ae9",
+      "citation_id": "505c3a53-bb6c-4a64-9828-ac4d164510e7",
+      "page_char_start": 328,
+      "page_char_end": 528,
+      "quote": "The principal planning risks are slower enterprise purchase cycles and increased infrastructure costs.\nNet revenue retention reached 118%, reflecting deeper adoption and sustained customer engagement.",
+      "extraction_version": "1"
+    }
+  ],
+  "provenance": "Existing local real-ingest test document and persisted backend response from develop 06f1124; no user account identifiers."
+}

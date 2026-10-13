@@ -1,0 +1,32 @@
+Repeated header line
+
+Intro alpha.
+
+The margin improved materially this quarter.
+
+Middle bravo.
+
+The margin improved materially this quarter.
+
+Middle charlie.
+
+The margin improved materially this quarter.
+
+Cell unique AAA
+
+	
+
+The margin improved materially this quarter.
+
+
+
+
+Cell unique BBB
+
+	
+
+Narrow NBSP and ﬁ ligature and café
+
+Tail delta.
+
+Repeated header line

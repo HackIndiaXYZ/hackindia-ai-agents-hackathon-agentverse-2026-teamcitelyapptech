@@ -1,0 +1,17 @@
+# Secret scanning (CI runs gitleaks on every pull request's new commits).
+# Starts from gitleaks' built-in rules; the allowlist covers known false
+# positives only.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Known false positives"
+regexTarget = "match"                         # compare the patterns below with the whole finding
+paths = [
+  '''^tests/''',                              # made-up passwords and keys in test fixtures
+  '''^venv/''',                               # a virtualenv committed long ago
+]
+regexes = [
+  '''api:[0-9a-f]{40}''',                     # commit ids written as api:<sha> in docs
+  '''authorship_tag": "[A-Za-z0-9]+"''',      # Colab notebook metadata
+]

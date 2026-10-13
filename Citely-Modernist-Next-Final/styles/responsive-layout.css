@@ -1,0 +1,109 @@
+/* Public-site rhythm at normal browser zoom. Keep app/reader panes independent. */
+:root {
+  --site-width: 80rem;
+  --site-gutter: clamp(1.25rem, 3vw, 2rem);
+  --site-section-space: clamp(2.5rem, 5vw, 4.5rem);
+}
+body:has(.docs-shell) .marketing-header,
+body:has(.content-page) .marketing-header,
+body:has(.citely-policy) .marketing-header,
+body:has(.demo-request) .marketing-header {
+  padding-inline: clamp(1.25rem, 4vw, 5rem);
+}
+body:has(.docs-shell) .site-footer,
+body:has(.content-page) .site-footer,
+body:has(.demo-request) .site-footer {
+  max-width: none;
+  padding-inline: clamp(1.25rem, 4vw, 5rem);
+}
+.hero,
+.product-section,
+.workflow-section,
+.faq-section,
+.closing,
+.site-footer,
+.film-section,
+.demo-request {
+  width: 100%;
+  max-width: var(--site-width);
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+}
+.marketing-header {
+  padding-inline: max(var(--site-gutter), calc((100% - var(--site-width)) / 2 + var(--site-gutter)));
+}
+@media (min-width: 1001px) {
+  .marketing-header { height: 4.75rem; }
+}
+.hero { padding-top: 1.5rem; }
+.hero-heading { padding-top: clamp(2rem, 4vw, 3rem); }
+.hero h1 { font-size: clamp(2.625rem, 7.5vw, 6.5rem); }
+.hero-bottom { margin-top: 1.75rem; padding-bottom: 2rem; }
+.hero-ctas { flex-shrink: 0; }
+.product-section,
+.workflow-section,
+.faq-section { padding-block: var(--site-section-space); }
+.workflow-intro h2,
+.faq-intro h2 { font-size: clamp(2rem, 3.8vw, 3.25rem); }
+.workflow-grid,
+.faq-section { gap: clamp(1.75rem, 4vw, 3.5rem); }
+.manifesto {
+  padding-block: var(--site-section-space);
+  padding-inline: max(var(--site-gutter), calc((100% - var(--site-width)) / 2 + var(--site-gutter)));
+}
+.manifesto h2 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); }
+.closing { padding-block: var(--site-section-space); }
+.closing h2 { font-size: clamp(2.75rem, 6vw, 5rem); letter-spacing: -.045em; }
+.film-section { padding-top: 2rem; }
+.film-heading,
+.film-player,
+.film-foot,
+.film-transcript { max-width: 64rem; margin-inline: auto; }
+.film-heading h2 { font-size: clamp(1.875rem, 2.8vw, 2.5rem); }
+.film-heading p { flex-shrink: 1; max-width: 24rem; }
+.film-foot { flex-wrap: wrap; }
+.content-page { max-width: none; padding-inline: clamp(1.25rem, 4vw, 5rem); }
+.content-page .workflow-intro { max-width: none; margin-top: 2rem; }
+.content-page h1 { font-size: clamp(2.25rem, 4.5vw, 4rem); line-height: 1.08; letter-spacing: -.04em; }
+.content-page .workflow-intro p { max-width: 68ch; }
+.content-page .workflow-intro > section { display:grid; grid-template-columns:minmax(220px,.42fr) minmax(360px,1fr); gap:clamp(2rem,5vw,6rem); align-items:start; border-top:1px solid var(--line); padding-top:2rem; }
+.content-page .workflow-intro > section h2,.content-page .workflow-intro > section p { margin-top:0!important; }
+.content-page .workflow-intro > section .product-screenshot { grid-column:1/-1; width:100%; }
+.demo-request-grid { gap: clamp(2rem, 5vw, 4rem); margin-top: 2.5rem; }
+.demo-request-story h1 { font-size: clamp(2.75rem, 4.5vw, 4.25rem); }
+.demo-request-form.auth-form-wrap { justify-self: end; }
+/* A capped canvas also keeps the private login comfortable on wide displays. */
+.auth-shell { max-width: 90rem; margin-inline: auto; }
+@media (min-width: 761px) {
+  .demo-body { min-height: 34rem; }
+  .demo-answer p { font-size: 1.125rem; }
+  .auth-editorial { padding-inline: clamp(1.75rem, 3vw, 3rem); }
+  .auth-story { padding-block: 2.5rem; }
+  .auth-story h1 { font-size: clamp(2.75rem, 4.5vw, 4.5rem); }
+  .auth-main { padding-inline: clamp(1.5rem, 3vw, 2.5rem); }
+}
+@media (max-width: 760px) {
+  .content-page .workflow-intro > section { grid-template-columns:1fr; gap:1rem; }
+  .hero h1 { font-size: clamp(2.5rem, 8.7vw, 3.75rem); }
+  .hero-bottom { padding-bottom: 1.5rem; }
+  .hero-divider { font-size: .75rem; letter-spacing: .025em; align-items: center; gap: 1rem; }
+  .hero-divider > span:first-child { max-width: none; flex: 1; }
+  .scroll-cue { flex: 1; justify-content: flex-end; text-align: right; gap: .5rem; }
+  .scroll-cue b { flex-shrink: 0; }
+  .closing .tiny-label, .site-footer > span { font-size: .75rem; }
+  .film-heading { display: block; }
+  .film-heading p { max-width: none; }
+  .demo-request-form.auth-form-wrap { justify-self: stretch; }
+  .hero-topline,
+  .section-label { flex-wrap: wrap; }
+}
+@media (max-width: 360px) {
+  /* The narrowest phones: the same tight padding on every page. The inner
+     pages' wider padding above is more specific, so it is named here too;
+     without it those headers had no room to spare at 320px. */
+  .marketing-header,
+  body:has(.docs-shell) .marketing-header,
+  body:has(.content-page) .marketing-header,
+  body:has(.citely-policy) .marketing-header,
+  body:has(.demo-request) .marketing-header { padding-inline: .75rem; }
+}

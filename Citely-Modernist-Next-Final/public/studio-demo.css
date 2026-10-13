@@ -1,0 +1,2 @@
+/* Sample-mode extras only; product layout is shared. */
+.demo-upload-list{display:grid;gap:12px;margin-top:20px}.demo-upload-list button{justify-content:space-between;padding:18px}
